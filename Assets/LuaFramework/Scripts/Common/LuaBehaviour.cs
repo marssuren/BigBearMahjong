@@ -58,6 +58,10 @@ namespace LuaFramework {
                 luafunc.Call(go);
             };
         }
+		///
+		/// 
+		//public void AddValueChanged(GameObject go,)
+		
 
         /// <summary>
         /// 删除单击事件
