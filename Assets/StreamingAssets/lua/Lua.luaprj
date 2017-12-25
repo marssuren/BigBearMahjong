@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Project Name="Lua.luaprj" >
+    <Filter Name="Lua" >
+        <LuaFile RelativePath=".\eventlib.lua" />
+        <LuaFile RelativePath=".\events.lua" />
+        <LuaFile RelativePath=".\Main.lua" />
+        <Filter Name="3rd" >
+            <Filter Name="cjson" >
+                <LuaFile RelativePath=".\3rd\cjson\json2lua.lua" />
+                <LuaFile RelativePath=".\3rd\cjson\lua2json.lua" />
+                <LuaFile RelativePath=".\3rd\cjson\test.lua" />
+                <LuaFile RelativePath=".\3rd\cjson\util.lua" />
+            </Filter>
+            <Filter Name="luabitop" >
+                <LuaFile RelativePath=".\3rd\luabitop\bitbench.lua" />
+                <LuaFile RelativePath=".\3rd\luabitop\bittest.lua" />
+                <LuaFile RelativePath=".\3rd\luabitop\installpath.lua" />
+                <LuaFile RelativePath=".\3rd\luabitop\md5test.lua" />
+                <LuaFile RelativePath=".\3rd\luabitop\nsievebits.lua" />
+                <Filter Name="doc" >
+                    <Filter Name="img" />
+                </Filter>
+            </Filter>
+            <Filter Name="pbc" >
+                <LuaFile RelativePath=".\3rd\pbc\parser.lua" />
+                <LuaFile RelativePath=".\3rd\pbc\protobuf.lua" />
+                <LuaFile RelativePath=".\3rd\pbc\test.lua" />
+                <LuaFile RelativePath=".\3rd\pbc\test2.lua" />
+                <LuaFile RelativePath=".\3rd\pbc\testparser.lua" />
+            </Filter>
+            <Filter Name="pblua" >
+                <LuaFile RelativePath=".\3rd\pblua\login_pb.lua" />
+                <LuaFile RelativePath=".\3rd\pblua\person_pb.lua" />
+            </Filter>
+            <Filter Name="sproto" >
+                <LuaFile RelativePath=".\3rd\sproto\print_r.lua" />
+                <LuaFile RelativePath=".\3rd\sproto\sproto.lua" />
+                <LuaFile RelativePath=".\3rd\sproto\sprotoparser.lua" />
+                <LuaFile RelativePath=".\3rd\sproto\test.lua" />
+                <LuaFile RelativePath=".\3rd\sproto\testall.lua" />
+                <LuaFile RelativePath=".\3rd\sproto\testrpc.lua" />
+            </Filter>
+        </Filter>
+        <Filter Name="Common" >
+            <LuaFile RelativePath=".\Common\define.lua" />
+            <LuaFile RelativePath=".\Common\functions.lua" />
+            <LuaFile RelativePath=".\Common\protocal.lua" />
+        </Filter>
+        <Filter Name="Controller" >
+            <LuaFile RelativePath=".\Controller\MessageCtrl.lua" />
+            <LuaFile RelativePath=".\Controller\PromptCtrl.lua" />
+            <LuaFile RelativePath=".\Controller\HomeCtrl.lua" />
+        </Filter>
+        <Filter Name="Logic" >
+            <LuaFile RelativePath=".\Logic\CtrlManager.lua" />
+            <LuaFile RelativePath=".\Logic\Game.lua" />
+            <LuaFile RelativePath=".\Logic\LuaClass.lua" />
+            <LuaFile RelativePath=".\Logic\Network.lua" />
+            <LuaFile RelativePath=".\Logic\GameManager.lua" />
+        </Filter>
+        <Filter Name="View" >
+            <LuaFile RelativePath=".\View\MessagePanel.lua" />
+            <LuaFile RelativePath=".\View\PromptPanel.lua" />
+            <LuaFile RelativePath=".\View\HomePanel.lua" />
+        </Filter>
+    </Filter>
+</Project>
