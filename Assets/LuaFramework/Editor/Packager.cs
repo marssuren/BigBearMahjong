@@ -274,6 +274,16 @@ public class Packager {
 		BuildPipeline.PopAssetDependencies();
 
 
+		///-------------------------------生成ConfigPanel素材绑定-------------------------------
+		BuildPipeline.PushAssetDependencies();
+		mainAsset = LoadAsset("Home/Prefabs/ConfigPanel.prefab");
+		assetfile = assetPath + "config" + AppConst.ExtName;
+		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
+		BuildPipeline.PopAssetDependencies();
+
+
+
+
 		///-------------------------------刷新---------------------------------------
 		BuildPipeline.PopAssetDependencies();
     }

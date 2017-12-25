@@ -4,6 +4,7 @@ CtrlNames = {
 	Message = "MessageCtrl",
 	Home = "HomeCtrl",
 	Rule="RuleCtrl",
+	Config="ConfigCtrl"
 }
 
 PanelNames = {
@@ -11,6 +12,7 @@ PanelNames = {
 	"MessagePanel",
 	"HomePanel",
 	"RulePanel",
+	"ConfigPanel"
 }
 
 --协议类型--

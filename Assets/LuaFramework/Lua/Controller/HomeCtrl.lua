@@ -24,30 +24,26 @@ function HomeCtrl.OnCreate(_gameObject)
 	message:AddClick(HomePanel.CreateRoomBtn,this.OnCreateRoomBtnClick)
 	message:AddClick(HomePanel.EnterRoomBtn,this.OnEnterRoomBtnClick)
 	message:AddClick(HomePanel.RuleBtn,this.OnRuleBtnClick)
-	message:AddClick(HomePanel.SettingBtn,this.OnSettingBtnClick)
+	message:AddClick(HomePanel.SettingBtn,this.OnConfigBtnClick)
 end
 
 function HomeCtrl.OnCreateRoomBtnClick(_gameObject)		--"创建房间"按钮点击事件
-	print("CreateRoomBtnClick!!!")
+	print("todo:CreateRoomBtnClick!!!")
 	--this:Close()
 end
 function HomeCtrl.OnEnterRoomBtnClick(_gameObject)		--"进入房间"按钮点击事件
-	print("EnterRoomBtnClick!!!")
+	print("todo:EnterRoomBtnClick!!!")
 end
 function HomeCtrl.OnRuleBtnClick(_gameObject)			--"规则"按钮点击事件
-	print("RuleBtnClick!!!")
+	--print("RuleBtnClick!!!")
 	local tRuleCtrl=CtrlManager.GetCtrl(CtrlNames.Rule)
-	if tRuleCtrl.gameObject==nil then
-		print("!!!!!")
-		tRuleCtrl:Awake()
-	end
+	tRuleCtrl:Awake()
 end
-function HomeCtrl.OnSettingBtnClick(_gameObject)		--"设置"按钮点击事件
-	print("SettingBtnClick!!!")
+function HomeCtrl.OnConfigBtnClick(_gameObject)		--"设置"按钮点击事件
+	--print("ConfigBtnClick!!!")
+	local tConfigCtrl=CtrlManager.GetCtrl(CtrlNames.Config)
+	tConfigCtrl:Awake()
 end
-
-
-
 
 function HomeCtrl.Close()
 	gameObject:SetActive(false)

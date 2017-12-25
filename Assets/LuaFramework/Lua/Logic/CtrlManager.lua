@@ -3,6 +3,7 @@ require "Controller/PromptCtrl"
 require "Controller/MessageCtrl"
 require "Controller/HomeCtrl"
 require "Controller/RuleCtrl"
+require "Controller/ConfigCtrl"
 
 CtrlManager = {};
 local this = CtrlManager;
@@ -14,6 +15,7 @@ function CtrlManager.Init()
 	--ctrlList[CtrlNames.Message] = MessageCtrl.New();
 	ctrlList[CtrlNames.Home] = HomeCtrl.New();
 	ctrlList[CtrlNames.Rule]=RuleCtrl.New();
+	ctrlList[CtrlNames.Config]=ConfigCtrl.New();
 	return this;
 end
 
