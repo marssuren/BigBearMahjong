@@ -14,6 +14,10 @@ function RulePanel.InitPanel()
    this.MaskBtn=transform:Find("Btns/MaskBtn").gameObject
 
 end
+function RulePanel.Start()
+    
+    
+end
 
 
 
