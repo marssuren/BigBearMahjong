@@ -26,7 +26,7 @@ function ConfigCtrl.OnCreate(_gameObject)
     message:AddClick(ConfigPanel.MaskBtn,this.OnMaskBtnClick)
 
     --音量Slider绑定事件
-    
+
 
 end
 
