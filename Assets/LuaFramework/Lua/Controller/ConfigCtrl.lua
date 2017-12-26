@@ -26,8 +26,7 @@ function ConfigCtrl.OnCreate(_gameObject)
     message:AddClick(ConfigPanel.MaskBtn,this.OnMaskBtnClick)
 
     --音量Slider绑定事件
-
-
+    message:AddSliderValueChanged(ConfigPanel.MusicVolumeSlider,this.ChangeMusicVolume)
 end
 
 function ConfigCtrl.OnMaskBtnClick()   --Mask按钮点击事件
@@ -36,8 +35,9 @@ end
 function ConfigCtrl.ChangeShow(_isShow)     --改变显示状态
     gameObject:SetActive(_isShow)
 end
-function ChangeMusicVolume()                --改变音乐音量
-    --musicManager
+function ConfigCtrl.ChangeMusicVolume(_value)                --改变音乐音量
+    --print(_value.."!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    ConfigPanel.MusicManager:GetComponent("AudioSource").volume=_value
 end
 
 

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace LuaFramework
 {
@@ -12,7 +11,6 @@ namespace LuaFramework
 		void Start()
 		{
 			AppFacade.Instance.StartUp();   //启动游戏
-
 		}
 	}
 }

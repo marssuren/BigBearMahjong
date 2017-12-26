@@ -13,9 +13,11 @@ public static class LuaBinder
 		LuaProfilerWrap.Register(L);
 		UIPanelWrap.Register(L);
 		UILabelWrap.Register(L);
+		UISliderWrap.Register(L);
 		UIGridWrap.Register(L);
 		UIRectWrap.Register(L);
 		UIWidgetWrap.Register(L);
+		UIProgressBarWrap.Register(L);
 		UIWidgetContainerWrap.Register(L);
 		BaseWrap.Register(L);
 		ManagerWrap.Register(L);
@@ -115,6 +117,9 @@ public static class LuaBinder
 		L.EndModule();
 		L.BeginModule("UIDrawCall");
 		L.RegFunction("OnRenderCallback", UIDrawCall_OnRenderCallback);
+		L.EndModule();
+		L.BeginModule("UIProgressBar");
+		L.RegFunction("OnDragFinished", UIProgressBar_OnDragFinished);
 		L.EndModule();
 		L.BeginModule("UIGrid");
 		L.RegFunction("OnReposition", UIGrid_OnReposition);
@@ -640,6 +645,33 @@ public static class LuaBinder
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
 				Delegate arg1 = DelegateTraits<UIDrawCall.OnRenderCallback>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int UIProgressBar_OnDragFinished(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<UIProgressBar.OnDragFinished>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<UIProgressBar.OnDragFinished>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;

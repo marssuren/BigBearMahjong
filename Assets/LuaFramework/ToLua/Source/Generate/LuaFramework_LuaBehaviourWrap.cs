@@ -10,6 +10,7 @@ public class LuaFramework_LuaBehaviourWrap
 		L.RegFunction("OnInit", OnInit);
 		L.RegFunction("LoadAsset", LoadAsset);
 		L.RegFunction("AddClick", AddClick);
+		L.RegFunction("AddSliderValueChanged", AddSliderValueChanged);
 		L.RegFunction("RemoveClick", RemoveClick);
 		L.RegFunction("ClearClick", ClearClick);
 		L.RegFunction("__eq", op_Equality);
@@ -78,6 +79,24 @@ public class LuaFramework_LuaBehaviourWrap
 			UnityEngine.GameObject arg0 = (UnityEngine.GameObject)ToLua.CheckObject(L, 2, typeof(UnityEngine.GameObject));
 			LuaFunction arg1 = ToLua.CheckLuaFunction(L, 3);
 			obj.AddClick(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int AddSliderValueChanged(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			LuaFramework.LuaBehaviour obj = (LuaFramework.LuaBehaviour)ToLua.CheckObject<LuaFramework.LuaBehaviour>(L, 1);
+			UnityEngine.GameObject arg0 = (UnityEngine.GameObject)ToLua.CheckObject(L, 2, typeof(UnityEngine.GameObject));
+			LuaFunction arg1 = ToLua.CheckLuaFunction(L, 3);
+			obj.AddSliderValueChanged(arg0, arg1);
 			return 0;
 		}
 		catch (Exception e)

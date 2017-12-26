@@ -34,6 +34,7 @@ public class DelegateFactory
 		dict.Add(typeof(UIWidget.OnPostFillCallback), factory.UIWidget_OnPostFillCallback);
 		dict.Add(typeof(UIDrawCall.OnRenderCallback), factory.UIDrawCall_OnRenderCallback);
 		dict.Add(typeof(UIWidget.HitCheck), factory.UIWidget_HitCheck);
+		dict.Add(typeof(UIProgressBar.OnDragFinished), factory.UIProgressBar_OnDragFinished);
 		dict.Add(typeof(UIGrid.OnReposition), factory.UIGrid_OnReposition);
 		dict.Add(typeof(System.Comparison<UnityEngine.Transform>), factory.System_Comparison_UnityEngine_Transform);
 		dict.Add(typeof(System.Action<NotiData>), factory.System_Action_NotiData);
@@ -55,6 +56,7 @@ public class DelegateFactory
 		DelegateTraits<UIWidget.OnPostFillCallback>.Init(factory.UIWidget_OnPostFillCallback);
 		DelegateTraits<UIDrawCall.OnRenderCallback>.Init(factory.UIDrawCall_OnRenderCallback);
 		DelegateTraits<UIWidget.HitCheck>.Init(factory.UIWidget_HitCheck);
+		DelegateTraits<UIProgressBar.OnDragFinished>.Init(factory.UIProgressBar_OnDragFinished);
 		DelegateTraits<UIGrid.OnReposition>.Init(factory.UIGrid_OnReposition);
 		DelegateTraits<System.Comparison<UnityEngine.Transform>>.Init(factory.System_Comparison_UnityEngine_Transform);
 		DelegateTraits<System.Action<NotiData>>.Init(factory.System_Action_NotiData);
@@ -76,6 +78,7 @@ public class DelegateFactory
 		TypeTraits<UIWidget.OnPostFillCallback>.Init(factory.Check_UIWidget_OnPostFillCallback);
 		TypeTraits<UIDrawCall.OnRenderCallback>.Init(factory.Check_UIDrawCall_OnRenderCallback);
 		TypeTraits<UIWidget.HitCheck>.Init(factory.Check_UIWidget_HitCheck);
+		TypeTraits<UIProgressBar.OnDragFinished>.Init(factory.Check_UIProgressBar_OnDragFinished);
 		TypeTraits<UIGrid.OnReposition>.Init(factory.Check_UIGrid_OnReposition);
 		TypeTraits<System.Comparison<UnityEngine.Transform>>.Init(factory.Check_System_Comparison_UnityEngine_Transform);
 		TypeTraits<System.Action<NotiData>>.Init(factory.Check_System_Action_NotiData);
@@ -97,6 +100,7 @@ public class DelegateFactory
 		StackTraits<UIWidget.OnPostFillCallback>.Push = factory.Push_UIWidget_OnPostFillCallback;
 		StackTraits<UIDrawCall.OnRenderCallback>.Push = factory.Push_UIDrawCall_OnRenderCallback;
 		StackTraits<UIWidget.HitCheck>.Push = factory.Push_UIWidget_HitCheck;
+		StackTraits<UIProgressBar.OnDragFinished>.Push = factory.Push_UIProgressBar_OnDragFinished;
 		StackTraits<UIGrid.OnReposition>.Push = factory.Push_UIGrid_OnReposition;
 		StackTraits<System.Comparison<UnityEngine.Transform>>.Push = factory.Push_System_Comparison_UnityEngine_Transform;
 		StackTraits<System.Action<NotiData>>.Push = factory.Push_System_Action_NotiData;
@@ -1194,6 +1198,59 @@ public class DelegateFactory
 	}
 
 	void Push_UIWidget_HitCheck(IntPtr L, UIWidget.HitCheck o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class UIProgressBar_OnDragFinished_Event : LuaDelegate
+	{
+		public UIProgressBar_OnDragFinished_Event(LuaFunction func) : base(func) { }
+		public UIProgressBar_OnDragFinished_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call()
+		{
+			func.Call();
+		}
+
+		public void CallWithSelf()
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public UIProgressBar.OnDragFinished UIProgressBar_OnDragFinished(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			UIProgressBar.OnDragFinished fn = delegate() { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			UIProgressBar_OnDragFinished_Event target = new UIProgressBar_OnDragFinished_Event(func);
+			UIProgressBar.OnDragFinished d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			UIProgressBar_OnDragFinished_Event target = new UIProgressBar_OnDragFinished_Event(func, self);
+			UIProgressBar.OnDragFinished d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_UIProgressBar_OnDragFinished(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(UIProgressBar.OnDragFinished), L, pos);
+	}
+
+	void Push_UIProgressBar_OnDragFinished(IntPtr L, UIProgressBar.OnDragFinished o)
 	{
 		ToLua.Push(L, o);
 	}
