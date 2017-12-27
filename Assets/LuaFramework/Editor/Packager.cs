@@ -282,7 +282,12 @@ public class Packager {
 		BuildPipeline.PopAssetDependencies();
 
 
-
+		///-------------------------------生成CreateRoomPanel素材绑定-------------------------------
+		BuildPipeline.PushAssetDependencies();
+		mainAsset = LoadAsset("Home/Prefabs/CreateRoomPanel.prefab");
+		assetfile = assetPath + "createroom" + AppConst.ExtName;
+		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
+		BuildPipeline.PopAssetDependencies();
 
 		///-------------------------------刷新---------------------------------------
 		BuildPipeline.PopAssetDependencies();

@@ -4,15 +4,17 @@ CtrlNames = {
 	Message = "MessageCtrl",
 	Home = "HomeCtrl",
 	Rule="RuleCtrl",
-	Config="ConfigCtrl"
+	Config="ConfigCtrl",
+	CreateRoom="CreateRoomCtrl",
 }
 
 PanelNames = {
 	--"PromptPanel",	
-	"MessagePanel",
-	"HomePanel",
-	"RulePanel",
-	"ConfigPanel"
+	MessagePanel="MessagePanel",
+	HomePanel="HomePanel",
+	RulePanel="RulePanel",
+	ConfigPanel="ConfigPanel",
+	CreateRoomPanel="CreateRoomPanel",
 }
 
 --协议类型--

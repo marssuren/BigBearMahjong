@@ -29,9 +29,9 @@ local gameObject;
 local WWW = UnityEngine.WWW;
 
 function Game.InitViewPanels()
-	for i = 1, #PanelNames do
-		print(PanelNames[i].."!!!!!!!!!!!!!!!!!!!!!!!!")
-		require ("View/"..tostring(PanelNames[i]))
+	for index,value in pairs(PanelNames) do
+		print(index,PanelNames[index].."!!!!!!!!!!!!!!!!!!!!!!!!")
+		require ("View/"..tostring(PanelNames[index]))
 	end
 end
 
@@ -60,12 +60,7 @@ function Game.OnInitOK()
     end
 	
 	local tHomeCtrl=CtrlManager.GetCtrl(CtrlNames.Home)
-	tHomeCtrl:Awake();
-
-
-
-
-
+	tHomeCtrl:Show();
     logWarn('LuaFramework InitOK--->>>');
 end
 
