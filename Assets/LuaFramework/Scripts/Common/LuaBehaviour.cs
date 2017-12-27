@@ -81,6 +81,20 @@ namespace LuaFramework
 			});
 			tSlider.onChange.Add(tEventDelegate);
 		}
+		//绑定Toggle的ValueChange事件
+		public void AddToggleValueListener(GameObject _go, LuaFunction _luaFunction)
+		{
+			UIToggle tToggle = _go.GetComponent<UIToggle>();
+			EventDelegate tEventDelegate = new EventDelegate(delegate ()
+			  {
+				  _luaFunction.Call(tToggle.value);
+			  });
+			tToggle.onChange.Add(tEventDelegate);
+		}
+
+
+
+
 
 		/// <summary>
 		/// 删除单击事件

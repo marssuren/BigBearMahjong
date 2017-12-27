@@ -53,20 +53,21 @@ end
 
 function HomeCtrl.OnCreateRoomBtnClick(_gameObject)		--"创建房间"按钮点击事件
 	--print("todo:CreateRoomBtnClick!!!")
-	--this:Close()
 	local tCreateCtrl=CtrlManager.GetCtrl(CtrlNames.CreateRoom)
 	tCreateCtrl:Show()
-
 end
+
 function HomeCtrl.OnEnterRoomBtnClick(_gameObject)		--"进入房间"按钮点击事件
 	print("todo:EnterRoomBtnClick!!!")
 end
+
 function HomeCtrl.OnRuleBtnClick(_gameObject)			--"规则"按钮点击事件
 	--print("RuleBtnClick!!!")
 	local tRuleCtrl=CtrlManager.GetCtrl(CtrlNames.Rule)
 	tRuleCtrl:Show()
 end
-function HomeCtrl.OnConfigBtnClick(_gameObject)		--"设置"按钮点击事件
+
+function HomeCtrl.OnConfigBtnClick(_gameObject)			--"设置"按钮点击事件
 	--print("ConfigBtnClick!!!")
 	local tConfigCtrl=CtrlManager.GetCtrl(CtrlNames.Config)
 	tConfigCtrl:Show()

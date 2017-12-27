@@ -14,6 +14,7 @@ public static class LuaBinder
 		UIPanelWrap.Register(L);
 		UILabelWrap.Register(L);
 		UISliderWrap.Register(L);
+		UIToggleWrap.Register(L);
 		UIGridWrap.Register(L);
 		UIRectWrap.Register(L);
 		UIWidgetWrap.Register(L);
@@ -120,6 +121,9 @@ public static class LuaBinder
 		L.EndModule();
 		L.BeginModule("UIProgressBar");
 		L.RegFunction("OnDragFinished", UIProgressBar_OnDragFinished);
+		L.EndModule();
+		L.BeginModule("UIToggle");
+		L.RegFunction("Validate", UIToggle_Validate);
 		L.EndModule();
 		L.BeginModule("UIGrid");
 		L.RegFunction("OnReposition", UIGrid_OnReposition);
@@ -672,6 +676,33 @@ public static class LuaBinder
 			{
 				LuaTable self = ToLua.CheckLuaTable(L, 2);
 				Delegate arg1 = DelegateTraits<UIProgressBar.OnDragFinished>.Create(func, self);
+				ToLua.Push(L, arg1);
+			}
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int UIToggle_Validate(IntPtr L)
+	{
+		try
+		{
+			int count = LuaDLL.lua_gettop(L);
+			LuaFunction func = ToLua.CheckLuaFunction(L, 1);
+
+			if (count == 1)
+			{
+				Delegate arg1 = DelegateTraits<UIToggle.Validate>.Create(func);
+				ToLua.Push(L, arg1);
+			}
+			else
+			{
+				LuaTable self = ToLua.CheckLuaTable(L, 2);
+				Delegate arg1 = DelegateTraits<UIToggle.Validate>.Create(func, self);
 				ToLua.Push(L, arg1);
 			}
 			return 1;

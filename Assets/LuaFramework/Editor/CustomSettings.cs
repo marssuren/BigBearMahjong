@@ -155,6 +155,7 @@ public static class CustomSettings
         _GT(typeof(UIPanel)),
         _GT(typeof(UILabel)),
 		_GT(typeof(UISlider)),
+		_GT(typeof(UIToggle)),
         _GT(typeof(UIGrid)),
         _GT(typeof(Util)),
         _GT(typeof(WrapGrid)),

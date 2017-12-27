@@ -35,6 +35,7 @@ public class DelegateFactory
 		dict.Add(typeof(UIDrawCall.OnRenderCallback), factory.UIDrawCall_OnRenderCallback);
 		dict.Add(typeof(UIWidget.HitCheck), factory.UIWidget_HitCheck);
 		dict.Add(typeof(UIProgressBar.OnDragFinished), factory.UIProgressBar_OnDragFinished);
+		dict.Add(typeof(UIToggle.Validate), factory.UIToggle_Validate);
 		dict.Add(typeof(UIGrid.OnReposition), factory.UIGrid_OnReposition);
 		dict.Add(typeof(System.Comparison<UnityEngine.Transform>), factory.System_Comparison_UnityEngine_Transform);
 		dict.Add(typeof(System.Action<NotiData>), factory.System_Action_NotiData);
@@ -57,6 +58,7 @@ public class DelegateFactory
 		DelegateTraits<UIDrawCall.OnRenderCallback>.Init(factory.UIDrawCall_OnRenderCallback);
 		DelegateTraits<UIWidget.HitCheck>.Init(factory.UIWidget_HitCheck);
 		DelegateTraits<UIProgressBar.OnDragFinished>.Init(factory.UIProgressBar_OnDragFinished);
+		DelegateTraits<UIToggle.Validate>.Init(factory.UIToggle_Validate);
 		DelegateTraits<UIGrid.OnReposition>.Init(factory.UIGrid_OnReposition);
 		DelegateTraits<System.Comparison<UnityEngine.Transform>>.Init(factory.System_Comparison_UnityEngine_Transform);
 		DelegateTraits<System.Action<NotiData>>.Init(factory.System_Action_NotiData);
@@ -79,6 +81,7 @@ public class DelegateFactory
 		TypeTraits<UIDrawCall.OnRenderCallback>.Init(factory.Check_UIDrawCall_OnRenderCallback);
 		TypeTraits<UIWidget.HitCheck>.Init(factory.Check_UIWidget_HitCheck);
 		TypeTraits<UIProgressBar.OnDragFinished>.Init(factory.Check_UIProgressBar_OnDragFinished);
+		TypeTraits<UIToggle.Validate>.Init(factory.Check_UIToggle_Validate);
 		TypeTraits<UIGrid.OnReposition>.Init(factory.Check_UIGrid_OnReposition);
 		TypeTraits<System.Comparison<UnityEngine.Transform>>.Init(factory.Check_System_Comparison_UnityEngine_Transform);
 		TypeTraits<System.Action<NotiData>>.Init(factory.Check_System_Action_NotiData);
@@ -101,6 +104,7 @@ public class DelegateFactory
 		StackTraits<UIDrawCall.OnRenderCallback>.Push = factory.Push_UIDrawCall_OnRenderCallback;
 		StackTraits<UIWidget.HitCheck>.Push = factory.Push_UIWidget_HitCheck;
 		StackTraits<UIProgressBar.OnDragFinished>.Push = factory.Push_UIProgressBar_OnDragFinished;
+		StackTraits<UIToggle.Validate>.Push = factory.Push_UIToggle_Validate;
 		StackTraits<UIGrid.OnReposition>.Push = factory.Push_UIGrid_OnReposition;
 		StackTraits<System.Comparison<UnityEngine.Transform>>.Push = factory.Push_System_Comparison_UnityEngine_Transform;
 		StackTraits<System.Action<NotiData>>.Push = factory.Push_System_Action_NotiData;
@@ -1251,6 +1255,67 @@ public class DelegateFactory
 	}
 
 	void Push_UIProgressBar_OnDragFinished(IntPtr L, UIProgressBar.OnDragFinished o)
+	{
+		ToLua.Push(L, o);
+	}
+
+	class UIToggle_Validate_Event : LuaDelegate
+	{
+		public UIToggle_Validate_Event(LuaFunction func) : base(func) { }
+		public UIToggle_Validate_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public bool Call(bool param0)
+		{
+			func.BeginPCall();
+			func.Push(param0);
+			func.PCall();
+			bool ret = func.CheckBoolean();
+			func.EndPCall();
+			return ret;
+		}
+
+		public bool CallWithSelf(bool param0)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.Push(param0);
+			func.PCall();
+			bool ret = func.CheckBoolean();
+			func.EndPCall();
+			return ret;
+		}
+	}
+
+	public UIToggle.Validate UIToggle_Validate(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			UIToggle.Validate fn = delegate(bool param0) { return false; };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			UIToggle_Validate_Event target = new UIToggle_Validate_Event(func);
+			UIToggle.Validate d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			UIToggle_Validate_Event target = new UIToggle_Validate_Event(func, self);
+			UIToggle.Validate d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	bool Check_UIToggle_Validate(IntPtr L, int pos)
+	{
+		return TypeChecker.CheckDelegateType(typeof(UIToggle.Validate), L, pos);
+	}
+
+	void Push_UIToggle_Validate(IntPtr L, UIToggle.Validate o)
 	{
 		ToLua.Push(L, o);
 	}

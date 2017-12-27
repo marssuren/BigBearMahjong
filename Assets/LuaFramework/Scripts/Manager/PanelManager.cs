@@ -98,6 +98,7 @@ namespace LuaFramework
 				if(null != _luaFunction)
 				{
 					_luaFunction.Call();        //执行刷新回调
+					UIToggle tToggle = null;
 				}
 			}
 		}
