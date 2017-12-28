@@ -49,8 +49,6 @@ function HomeCtrl.OnEnable()			--页面激活
 
 end
 
-
-
 function HomeCtrl.OnCreateRoomBtnClick(_gameObject)		--"创建房间"按钮点击事件
 	--print("todo:CreateRoomBtnClick!!!")
 	local tCreateCtrl=CtrlManager.GetCtrl(CtrlNames.CreateRoom)
@@ -58,7 +56,9 @@ function HomeCtrl.OnCreateRoomBtnClick(_gameObject)		--"创建房间"按钮点�
 end
 
 function HomeCtrl.OnEnterRoomBtnClick(_gameObject)		--"进入房间"按钮点击事件
-	print("todo:EnterRoomBtnClick!!!")
+	--print("todo:EnterRoomBtnClick!!!")
+	local tEnterRoomCtrl=CtrlManager.GetCtrl(CtrlNames.EnterRoom)
+	tEnterRoomCtrl:Show()
 end
 
 function HomeCtrl.OnRuleBtnClick(_gameObject)			--"规则"按钮点击事件

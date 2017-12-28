@@ -48,3 +48,7 @@ function findPanel(str)
 	end
 	return obj:GetComponent("BaseLua");
 end
+
+function getChildsTransforms(_gameObject)
+	return Util.GetChildsTransforms(_gameObject)
+end

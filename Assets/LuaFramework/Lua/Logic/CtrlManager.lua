@@ -5,6 +5,7 @@ require "Controller/HomeCtrl"
 require "Controller/RuleCtrl"
 require "Controller/ConfigCtrl"
 require "Controller/CreateRoomCtrl"
+require "Controller/EnterRoomCtrl"
 
 CtrlManager = {};
 local this = CtrlManager;
@@ -18,6 +19,7 @@ function CtrlManager.Init()
 	ctrlList[CtrlNames.Rule]=RuleCtrl.New();
 	ctrlList[CtrlNames.Config]=ConfigCtrl.New();
 	ctrlList[CtrlNames.CreateRoom]=CreateRoomCtrl.New();
+	ctrlList[CtrlNames.EnterRoom]=EnterRoomCtrl.New();
 	return this;
 end
 

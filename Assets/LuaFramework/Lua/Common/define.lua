@@ -6,6 +6,7 @@ CtrlNames = {
 	Rule="RuleCtrl",
 	Config="ConfigCtrl",
 	CreateRoom="CreateRoomCtrl",
+	EnterRoom="EnterRoomCtrl"
 }
 
 PanelNames = {
@@ -15,6 +16,7 @@ PanelNames = {
 	RulePanel="RulePanel",
 	ConfigPanel="ConfigPanel",
 	CreateRoomPanel="CreateRoomPanel",
+	EnterRoomPanel="EnterRoomPanel",
 }
 
 --协议类型--

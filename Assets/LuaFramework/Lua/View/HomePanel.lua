@@ -10,7 +10,6 @@ function HomePanel.Awake(_gameObject)
 	this.InitPanel()
 end
 
-
 function HomePanel.InitPanel()
 	this.CreateRoomBtn=transform:FindChild("RoomBtns/CreateRoomBtn").gameObject
 	this.EnterRoomBtn=transform:FindChild("RoomBtns/EnterRoomBtn").gameObject

@@ -289,6 +289,14 @@ public class Packager {
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
+
+		///-------------------------------生成EnterRoomPanel素材绑定-------------------------------
+		BuildPipeline.PushAssetDependencies();
+		mainAsset = LoadAsset("Home/Prefabs/EnterRoomPanel.prefab");
+		assetfile = assetPath + "enterroom" + AppConst.ExtName;
+		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
+		BuildPipeline.PopAssetDependencies();
+
 		///-------------------------------刷新---------------------------------------
 		BuildPipeline.PopAssetDependencies();
     }
