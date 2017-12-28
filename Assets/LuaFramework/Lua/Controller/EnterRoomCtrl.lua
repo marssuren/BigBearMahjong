@@ -51,9 +51,12 @@ end
 function EnterRoomCtrl.OnMaskBtnClick()     --遮罩按钮点击事件
     this.Hide()
 end
+function EnterRoomCtrl.OnDisable()
+    clearNumber()
+end
 function EnterRoomCtrl.Hide()
     if nil~=gameObject then
-        panelMgr:SetPanelActive(PanelNames.EnterRoomPanel,false)
+        panelMgr:SetPanelActive(PanelNames.EnterRoomPanel,false,this.OnDisable)
     end
 end
 function EnterRoomCtrl.Show()            --显示面板
