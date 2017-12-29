@@ -48,7 +48,7 @@ function CreateRoomCtrl.OnCreate(_gameObject)
     --绑定百搭麻将Toggle监听事件
     message:AddClick(CreateRoomPanel.CreateRoomBtn,this.OnCreateBtnClick)   --绑定"创建"按钮点击事件
 end
-function CreateRoomCtrl.OnMaskBtnClick()
+function CreateRoomCtrl.OnMaskBtnClick()        --遮罩点击事件
     this.Hide()
 end
 

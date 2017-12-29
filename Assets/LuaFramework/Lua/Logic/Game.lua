@@ -52,9 +52,12 @@ function Game.OnInitOK()
 
     local buffer=ByteBuffer(str)
     print(nil==networkMgr)
-    networkMgr:SendMessage(buffer)
+    --networkMgr:SendMessage(buffer)
 
 
+    local tJsonTest=cjson.encode(str)
+    local tBuffer=ByteBuffer.New()
+    tBuffer:WriteShort(Protocal.Message)
 
 
 

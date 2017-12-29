@@ -36,7 +36,7 @@ function ConfigCtrl.Show()          --显示
     end
 end
 
-function ConfigCtrl.Hide()
+function ConfigCtrl.Hide()          --隐藏
     if nil~=gameObject then
         panelMgr:SetPanelActive(PanelNames.ConfigPanel,false)
     end

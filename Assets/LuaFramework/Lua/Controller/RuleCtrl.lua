@@ -48,10 +48,6 @@ end
 function RuleCtrl.OnMaskBtnClick()              --Mask点击事件
     this.Hide()
 end
-function RuleCtrl.ChangeShow(_isShow)           --改变显示
-    print(nil==this.panel)
-    gameObject:SetActive(_isShow)
-end
 
 
 

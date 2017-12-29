@@ -11,7 +11,7 @@ function RulePanel.Awake(_gameObject)
     this.InitPanel()
 end
 function RulePanel.InitPanel()
-   this.MaskBtn=transform:Find("Btns/MaskBtn").gameObject
+   this.MaskBtn=transform:Find("Btns/MaskBtn").gameObject       --获取遮罩
 
 end
 function RulePanel.Start()
