@@ -42,7 +42,7 @@ function Game.OnInitOK()
     networkMgr:SendConnect();
 
 
-    local str="123456789"
+    local str="请求服务器"
     print(str)
     local byte={}
     for i = 1, #str do

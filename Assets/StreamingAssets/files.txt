@@ -18,7 +18,7 @@ lua/lua_cjson.unity3d|ed7c8d445b85cece51b17dd462fa9638
 lua/lua_common.unity3d|3e1aaa2863fd6ae9809015bee3e01e1d
 lua/lua_controller.unity3d|1f95bbcf507478c0b094bfc7951708cc
 lua/lua_jit.unity3d|981e94d7800c1b07209855057706fa02
-lua/lua_logic.unity3d|3b3aa5a7b13a37d371544f06cbd39597
+lua/lua_logic.unity3d|66d12d5364a17e438e96a48727427725
 lua/lua_lpeg.unity3d|a8cf8c9a18c51d335c03b3ff004f9bd9
 lua/lua_misc.unity3d|eea00afd41d8c12cfcd5e242a232d2d6
 lua/lua_protobuf.unity3d|e7732ecfdd328793b353f50c7b63b933
