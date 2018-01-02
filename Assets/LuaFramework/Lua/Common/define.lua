@@ -6,7 +6,9 @@ CtrlNames = {
 	Rule="RuleCtrl",
 	Config="ConfigCtrl",
 	CreateRoom="CreateRoomCtrl",
-	EnterRoom="EnterRoomCtrl"
+	EnterRoom="EnterRoomCtrl",
+	Store="StoreCtrl",
+	GameMain="GameMainCtrl",
 }
 
 PanelNames = {
@@ -17,6 +19,8 @@ PanelNames = {
 	ConfigPanel="ConfigPanel",
 	CreateRoomPanel="CreateRoomPanel",
 	EnterRoomPanel="EnterRoomPanel",
+	StorePanel="StorePanel",
+	GameMainPanel="GameMainPanel",
 }
 
 --协议类型--
@@ -26,6 +30,14 @@ ProtocalType = {
 	PBC = 2,
 	SPROTO = 3,
 }
+
+--语言类型--
+DialectType={
+	SuZhouDialect="SuZhouDialect",
+	Mandarin="Mandarin",
+}
+
+
 --当前使用的协议类型--
 TestProtoType = ProtocalType.BINARY;
 

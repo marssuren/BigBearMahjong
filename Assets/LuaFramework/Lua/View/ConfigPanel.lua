@@ -14,6 +14,8 @@ function ConfigPanel.InitPanel()
     this.MusicManager=GameObject.Find("MusicManager").gameObject    --获取MusicManager
     this.SoundEffectVolumeSlider=transform:Find("SoundEffectVolumeSlider").gameObject    --获取音效音量Slider
     this.MusicVolumeSlider=transform:Find("MusicVolumeSlider").gameObject    --获取音乐音量Slider
+    this.SuZhouDialectToggle=transform:Find("SuZhouDialectToggle").gameObject    --获取"苏州话"Toggle
+    this.MandarinToggle=transform:Find("MandarinToggle").gameObject --获取"普通话"Toggle
 
 end
 

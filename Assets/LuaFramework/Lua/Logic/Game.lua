@@ -16,6 +16,8 @@ require "Common/functions"
 require "Logic/LuaClass"
 require "Logic/CtrlManager"
 
+require "Logic/LocalData"
+
 require "Controller/PromptCtrl"
 require "Controller/HomeCtrl"
 

@@ -26,6 +26,10 @@ function ConfigCtrl.OnCreate(_gameObject)
 
     --音量Slider绑定事件
     message:AddSliderValueChanged(ConfigPanel.MusicVolumeSlider,this.ChangeMusicVolume)
+    --语言Toggle绑定事件
+    message:AddToggleValueListener(ConfigPanel.SuZhouDialectToggle,this.OnSuZhouDialectToggleValueChange)
+    message:AddToggleValueListener(ConfigPanel.MandarinToggle,this.OnMandarinToggleValueChange)
+    
 end
 
 function ConfigCtrl.Show()          --显示
@@ -56,6 +60,23 @@ function ConfigCtrl.ChangeMusicVolume(_value)                --改变音乐音�
     ConfigPanel.MusicManager:GetComponent("AudioSource").volume=_value
 end
 
+function ConfigCtrl.OnSuZhouDialectToggleValueChange(_value)  --"苏州方言"Toggle值改变触发事件
+    if _value==true then
+        print("todo:改为苏州方言")
+        LocalData.Dialect=DialectType.SuZhouDialect
+        LocalData.SetString("Dialect",DialectType.SuZhouDialect)
+        print(Util.GetString("Dialect","-1"))
+        
+    end
+end
+function ConfigCtrl.OnMandarinToggleValueChange(_value)  --"普通话"Toggle值改变触发事件
+    if _value==true then
+        print("todo:改为普通话")
+        LocalData.Dialect=DialectType.Mandarin
+        LocalData.SetString("Dialect",DialectType.Mandarin)        
+        print(Util.GetString("Dialect","-1"))
+    end
+end
 
 
 

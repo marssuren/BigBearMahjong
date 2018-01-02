@@ -29,6 +29,12 @@ public class LuaFramework_UtilWrap
 		L.RegFunction("CallMethod", CallMethod);
 		L.RegFunction("CheckEnvironment", CheckEnvironment);
 		L.RegFunction("GetChildsTransforms", GetChildsTransforms);
+		L.RegFunction("GetString", GetString);
+		L.RegFunction("GetInt", GetInt);
+		L.RegFunction("GetFloat", GetFloat);
+		L.RegFunction("SetString", SetString);
+		L.RegFunction("SetInt", SetInt);
+		L.RegFunction("SetFloat", SetFloat);
 		L.RegFunction("New", _CreateLuaFramework_Util);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("DataPath", get_DataPath, null);
@@ -456,6 +462,111 @@ public class LuaFramework_UtilWrap
 			UnityEngine.Transform[] o = LuaFramework.Util.GetChildsTransforms(arg0);
 			ToLua.Push(L, o);
 			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetString(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			object arg0 = ToLua.ToVarObject(L, 1);
+			object arg1 = ToLua.ToVarObject(L, 2);
+			string o = LuaFramework.Util.GetString(arg0, arg1);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetInt(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			object arg0 = ToLua.ToVarObject(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			int o = LuaFramework.Util.GetInt(arg0, arg1);
+			LuaDLL.lua_pushinteger(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetFloat(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			object arg0 = ToLua.ToVarObject(L, 1);
+			float arg1 = (float)LuaDLL.luaL_checknumber(L, 2);
+			float o = LuaFramework.Util.GetFloat(arg0, arg1);
+			LuaDLL.lua_pushnumber(L, o);
+			return 1;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetString(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			object arg0 = ToLua.ToVarObject(L, 1);
+			object arg1 = ToLua.ToVarObject(L, 2);
+			LuaFramework.Util.SetString(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetInt(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			object arg0 = ToLua.ToVarObject(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			LuaFramework.Util.SetInt(arg0, arg1);
+			return 0;
+		}
+		catch (Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetFloat(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			object arg0 = ToLua.ToVarObject(L, 1);
+			float arg1 = (float)LuaDLL.luaL_checknumber(L, 2);
+			LuaFramework.Util.SetFloat(arg0, arg1);
+			return 0;
 		}
 		catch (Exception e)
 		{

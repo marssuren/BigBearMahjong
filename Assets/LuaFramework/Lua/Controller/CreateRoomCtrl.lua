@@ -1,4 +1,5 @@
 require "Common/define"
+require "Logic/GameManager"
 
 CreateRoomCtrl={}
 local this=CreateRoomCtrl
@@ -63,8 +64,10 @@ function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
         print("todo:创建花麻将房间")
     else if CreateRoomPanel.HundredMatchMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建百搭麻将房间")
+
         end
     end
+    GameManager:EnterRoom()          --进入房间
 end
 
 

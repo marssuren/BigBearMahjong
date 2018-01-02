@@ -24,6 +24,10 @@ function GameManager.InitOK()
     networkMgr:SendConnect();
 
 	this.InitViewPanels();
-	
-	
+end
+
+
+function GameManager.EnterRoom( ... )								--进入房间
+	local tGameMainCtrl=CtrlManager:GetCtrl(CtrlNames.GameMain)
+	tGameMainCtrl:Show()
 end

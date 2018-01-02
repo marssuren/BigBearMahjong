@@ -19,6 +19,7 @@ function HomePanel.InitPanel()
 	this.UserNickname=transform:FindChild("UserInfoArea/UserNickname").gameObject	--获取用户昵称
 	this.UserIcon=transform:FindChild("UserInfoArea/UserIcon").gameObject			--获取用户图标
 	this.RoomCardCount=transform:FindChild("UserInfoArea/RoomCardCount").gameObject	--获取用户房卡数量
+	this.AddRoomCardBtn=transform:FindChild("UserInfoArea/AddRoomCardBtn").gameObject	--获取增加房卡按钮
 
 
 end

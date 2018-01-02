@@ -403,6 +403,33 @@ namespace LuaFramework
 		{
 			return _gameObject.transform.GetComponentsInChildren<Transform>();
 		}
+		#region PlyerPrefs存取相关
+		public static string GetString(object _key, object _defaultValue) //获取本地String
+		{
+			//Debug.LogError(_key.ToString());
+			return PlayerPrefs.GetString(_key.ToString(), _defaultValue.ToString());
+		}
+		public static int GetInt(object _key, int _defaultValue)   //获取本地Int
+		{
+			return PlayerPrefs.GetInt(_key.ToString(), _defaultValue);
+		}
+		public static float GetFloat(object _key, float _defaultValue)   //获取本地Float
+		{
+			return PlayerPrefs.GetFloat(_key.ToString(), _defaultValue);
+		}
+		public static void SetString(object _key, object _value) //设定本地String
+		{
+			PlayerPrefs.SetString(_key.ToString(), _value.ToString());
+		}
+		public static void SetInt(object _key, int _value)   //设定本地Int
+		{
+			PlayerPrefs.SetInt(_key.ToString(), _value);
+		}
+		public static void SetFloat(object _key, float _value)   //设定本地Float
+		{
+			PlayerPrefs.SetFloat(_key.ToString(), _value);
+		} 
+		#endregion
 	}
 
 

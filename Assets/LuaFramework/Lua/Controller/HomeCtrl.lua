@@ -28,6 +28,7 @@ function HomeCtrl.OnCreate(_gameObject)
 	message:AddClick(HomePanel.EnterRoomBtn,this.OnEnterRoomBtnClick)
 	message:AddClick(HomePanel.RuleBtn,this.OnRuleBtnClick)
 	message:AddClick(HomePanel.SettingBtn,this.OnConfigBtnClick)
+	message:AddClick(HomePanel.AddRoomCardBtn,this.OnAddRoomCardBtnClick)
 end
 
 function HomeCtrl.Show()
@@ -72,6 +73,12 @@ function HomeCtrl.OnConfigBtnClick(_gameObject)			--"设置"按钮点击事件
 	local tConfigCtrl=CtrlManager.GetCtrl(CtrlNames.Config)
 	tConfigCtrl:Show()
 end
+function	HomeCtrl.OnAddRoomCardBtnClick(_gameObject)		--增加房卡按钮点击事件
+	--print("AddRoomCardBtnClick!!!")
+	local tStoreCtrl = CtrlManager.GetCtrl(CtrlNames.Store)
+	tStoreCtrl:Show()
+end 
+
 
 
 
