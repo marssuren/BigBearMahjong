@@ -2,25 +2,27 @@
 CtrlNames = {
 	--Prompt = "PromptCtrl",
 	Message = "MessageCtrl",
-	Home = "HomeCtrl",
+	Hall = "HallCtrl",
 	Rule="RuleCtrl",
 	Config="ConfigCtrl",
 	CreateRoom="CreateRoomCtrl",
 	EnterRoom="EnterRoomCtrl",
 	Store="StoreCtrl",
 	GameMain="GameMainCtrl",
+	Login="LoginCtrl",
 }
 
 PanelNames = {
 	--"PromptPanel",	
 	MessagePanel="MessagePanel",
-	HomePanel="HomePanel",
+	HallPanel="HallPanel",
 	RulePanel="RulePanel",
 	ConfigPanel="ConfigPanel",
 	CreateRoomPanel="CreateRoomPanel",
 	EnterRoomPanel="EnterRoomPanel",
 	StorePanel="StorePanel",
 	GameMainPanel="GameMainPanel",
+	LoginPanel="LoginPanel",
 }
 
 --协议类型--

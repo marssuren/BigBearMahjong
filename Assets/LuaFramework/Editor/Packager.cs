@@ -258,10 +258,10 @@ public class Packager {
         BuildPipeline.PopAssetDependencies();
 
 
-		///-------------------------------生成HomePanel素材绑定-------------------------------
+		///-------------------------------生成HallPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
-	    mainAsset = LoadAsset("Home/Prefabs/HomePanel.prefab");
-	    assetfile = assetPath + "home" + AppConst.ExtName;
+	    mainAsset = LoadAsset("Home/Prefabs/HallPanel.prefab");
+	    assetfile = assetPath + "hall" + AppConst.ExtName;
 	    BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
@@ -304,7 +304,21 @@ public class Packager {
 		assetfile = assetPath + "store" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
-		
+
+		///-------------------------------生成GameMainPanel素材绑定-------------------------------
+		BuildPipeline.PushAssetDependencies();
+		mainAsset = LoadAsset("Home/Prefabs/GameMainPanel.prefab");
+		assetfile = assetPath + "gamemain" + AppConst.ExtName;
+		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
+		BuildPipeline.PopAssetDependencies();
+
+		///-------------------------------生成LoginPanel素材绑定-------------------------------
+		BuildPipeline.PushAssetDependencies();
+		mainAsset = LoadAsset("Home/Prefabs/LoginPanel.prefab");
+		assetfile = assetPath + "login" + AppConst.ExtName;
+		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
+		BuildPipeline.PopAssetDependencies();
+
 		///-------------------------------刷新---------------------------------------
 		BuildPipeline.PopAssetDependencies();
     }

@@ -49,8 +49,6 @@ end
 function ConfigCtrl.OnEnable()			--页面激活
 
 end
-
-
 function ConfigCtrl.OnMaskBtnClick()   --Mask按钮点击事件
     this.Hide()
 end

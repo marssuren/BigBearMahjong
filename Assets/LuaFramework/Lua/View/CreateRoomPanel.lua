@@ -16,12 +16,12 @@ function CreateRoomPanel.InitPanel()
     this.MixedMahjongToggle=transform:Find("MixedMahjong/MixedMahjongToggle").gameObject  --获取花麻将Toggle
     this.MixedMahjongArea=transform:Find("MixedMahjong/MixedMahjongArea").gameObject      --获取花麻将选择区域
 
-    this.HundredMatchMahjongToggle=transform:Find("HundredMatchMahjong/HundredMatchMahjongToggle").gameObject
+    --this.HundredMatchMahjongToggle=transform:Find("HundredMatchMahjong/HundredMatchMahjongToggle").gameObject
     --获取百搭麻将Toggle
-    this.HundredMatchMahjongArea=transform:Find("HundredMatchMahjong/HundredMatchMahjongArea").gameObject
+    --this.HundredMatchMahjongArea=transform:Find("HundredMatchMahjong/HundredMatchMahjongArea").gameObject
     --获取百搭麻将选择区域
 
-    this.CreateRoomBtn=transform:Find("CreateRoomBtn").gameObject   --获取"创建"按钮
+    this.CreateBtn=transform:Find("CreateBtn").gameObject   --获取"创建"按钮
 
 end
 

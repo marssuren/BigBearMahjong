@@ -1,4 +1,3 @@
-require "Common/define"
 require "Logic/GameManager"
 
 CreateRoomCtrl={}
@@ -45,9 +44,10 @@ function CreateRoomCtrl.OnCreate(_gameObject)
     message:AddClick(CreateRoomPanel.MaskBtn,this.OnMaskBtnClick)   --绑定遮罩点击事件
     message:AddToggleValueListener(CreateRoomPanel.MixedMahjongToggle,this.OnMixedMahjongToggleValueChanged)
     --绑定花麻将Toggle监听事件
-    message:AddToggleValueListener(CreateRoomPanel.HundredMatchMahjongToggle,this.OnHundredMatchMahjongToggleValueChanged)
+    --message:AddToggleValueListener(CreateRoomPanel.HundredMatchMahjongToggle,this
+    --.OnHundredMatchMahjongToggleValueChanged)
     --绑定百搭麻将Toggle监听事件
-    message:AddClick(CreateRoomPanel.CreateRoomBtn,this.OnCreateBtnClick)   --绑定"创建"按钮点击事件
+    message:AddClick(CreateRoomPanel.CreateBtn,this.OnCreateBtnClick)   --绑定"创建"按钮点击事件
 end
 function CreateRoomCtrl.OnMaskBtnClick()        --遮罩点击事件
     this.Hide()
@@ -67,7 +67,8 @@ function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
 
         end
     end
-    GameManager:EnterRoom()          --进入房间
+    this.Hide();
+    GameManager.EnterRoom()          --进入房间
 end
 
 

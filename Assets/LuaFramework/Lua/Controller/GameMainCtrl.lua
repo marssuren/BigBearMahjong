@@ -22,7 +22,7 @@ function GameMainCtrl.OnCreate( _gameObject )
     message:AddClick(GameMainPanel.MessageBtn,this.OnMessageBtnClick)
 
 end
-function GameMainCtrl.Show()
+function GameMainCtrl:Show()
 	if nil==gameObject then
 		this.Awake()			--无则加载
 	else
@@ -31,7 +31,7 @@ function GameMainCtrl.Show()
 
 end
 
-function GameMainCtrl.Hide()
+function GameMainCtrl:Hide()
 	if nil~=gameObject then
 		panelMgr:SetPanelActive(PanelNames.GameMainPanel,false)
 	end

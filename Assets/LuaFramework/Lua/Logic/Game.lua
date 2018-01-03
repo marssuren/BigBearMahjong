@@ -19,7 +19,8 @@ require "Logic/CtrlManager"
 require "Logic/LocalData"
 
 require "Controller/PromptCtrl"
-require "Controller/HomeCtrl"
+require "Controller/HallCtrl"
+require "Controller/GameMainCtrl"
 
 --管理器--
 Game = {};
@@ -81,8 +82,8 @@ function Game.OnInitOK()
         ctrl:Awake();
     end
 	
-	local tHomeCtrl=CtrlManager.GetCtrl(CtrlNames.Home)
-	tHomeCtrl:Show();
+	local tLoginCtrl=CtrlManager.GetCtrl(CtrlNames.Login)
+    tLoginCtrl:Show();
     logWarn('LuaFramework InitOK--->>>');
 end
 
@@ -244,3 +245,8 @@ end
 function Game.OnDestroy()
 	--logWarn('OnDestroy--->>>');
 end
+
+
+
+
+
