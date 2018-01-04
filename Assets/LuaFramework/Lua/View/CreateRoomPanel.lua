@@ -22,6 +22,7 @@ function CreateRoomPanel.InitPanel()
     --获取百搭麻将选择区域
 
     this.CreateBtn=transform:Find("CreateBtn").gameObject   --获取"创建"按钮
+    this.CloseBtn=transform:Find("CloseBtn").gameObject     --获取关闭按钮
 
 end
 

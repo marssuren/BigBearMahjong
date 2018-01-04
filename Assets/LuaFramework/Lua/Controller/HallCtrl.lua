@@ -29,6 +29,7 @@ function HallCtrl.OnCreate(_gameObject)
 	message:AddClick(HallPanel.RuleBtn,this.OnRuleBtnClick)
 	message:AddClick(HallPanel.SettingBtn,this.OnConfigBtnClick)
 	message:AddClick(HallPanel.AddRoomCardBtn,this.OnAddRoomCardBtnClick)
+	message:AddClick(HallPanel.ShareBtn,this.OnShareBtnClick)
 end
 
 function HallCtrl.Show()
@@ -67,6 +68,10 @@ function HallCtrl.OnRuleBtnClick(_gameObject)			--"规则"按钮点击事件
 	local tRuleCtrl=CtrlManager.GetCtrl(CtrlNames.Rule)
 	tRuleCtrl:Show()
 end
+function HallCtrl.OnShareBtnClick(_gameObject)			--"分享"按钮点击事件
+	local tShareCtrl=CtrlManager.GetCtrl(CtrlNames.Share)
+	tShareCtrl:Show()
+end
 
 function HallCtrl.OnConfigBtnClick(_gameObject)			--"设置"按钮点击事件
 	--print("ConfigBtnClick!!!")
@@ -77,7 +82,8 @@ function HallCtrl.OnAddRoomCardBtnClick(_gameObject)		--增加房卡按钮点击
 	--print("AddRoomCardBtnClick!!!")
 	local tStoreCtrl = CtrlManager.GetCtrl(CtrlNames.Store)
 	tStoreCtrl:Show()
-end 
+end
+
 
 
 

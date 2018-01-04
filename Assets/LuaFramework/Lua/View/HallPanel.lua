@@ -16,7 +16,7 @@ function HallPanel.InitPanel()
 	this.SettingBtn=transform:FindChild("ConfigBtn").gameObject				--获取"设置"按钮
 	this.RuleBtn=transform:FindChild("GuidBtns/Grid/RuleBtn").gameObject				--获取"规则"按钮
 	this.TeahouseBtn=transform:FindChild("GuidBtns/Grid/TeahouseBtn").gameObject		--获取"茶馆"按钮
-	this.RecordBtn=transform:FindChild("GuidBtns/Grid/RecordBtn").gameObject		--获取"规则"按钮
+	this.RecordBtn=transform:FindChild("GuidBtns/Grid/RecordBtn").gameObject		--获取"战绩"按钮
 	this.ShareBtn=transform:FindChild("GuidBtns/Grid/ShareBtn").gameObject			--获取"分享"按钮
 	this.AnnouncementBtn=transform:FindChild("GuidBtns/Grid/AnnouncementBtn").gameObject		--获取"公告"按钮
 

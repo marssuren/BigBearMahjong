@@ -16,10 +16,12 @@ public static class LuaBinder
 		UISliderWrap.Register(L);
 		UIToggleWrap.Register(L);
 		UIGridWrap.Register(L);
+		UISpriteWrap.Register(L);
 		UIRectWrap.Register(L);
 		UIWidgetWrap.Register(L);
 		UIProgressBarWrap.Register(L);
 		UIWidgetContainerWrap.Register(L);
+		UIBasicSpriteWrap.Register(L);
 		BaseWrap.Register(L);
 		ManagerWrap.Register(L);
 		L.BeginModule("UnityEngine");

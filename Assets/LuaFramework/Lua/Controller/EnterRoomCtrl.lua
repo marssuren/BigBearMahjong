@@ -8,7 +8,7 @@ local message
 
 
 local roomNumber=""       --房间号字符串
-local roomNumberTextGroup={}    --房间号显示数组
+local roomNumberImgGroup={}    --房间号显示数组
 
 
 
@@ -28,13 +28,15 @@ function EnterRoomCtrl.OnCreate(_gameObject)
     transform=gameObject.transform
     message=gameObject:GetComponent("LuaBehaviour")
 
-    for i = 1, EnterRoomPanel.RoomNumberText.childCount do
-        roomNumberTextGroup[i]=EnterRoomPanel.RoomNumberText:GetChild(i-1).gameObject:GetComponent("UILabel")
+    for i = 1, EnterRoomPanel.RoomNumberImg.childCount do
+        roomNumberImgGroup[i]=EnterRoomPanel.RoomNumberImg:GetChild(i-1).gameObject:GetComponent("UISprite")
         --print(roomNumberTextGroup[i].text)
     end
 
     --绑定点击事件
     message:AddClick(EnterRoomPanel.MaskBtn,this.OnMaskBtnClick)        --绑定遮罩点击事件
+    message:AddClick(EnterRoomPanel.CloseBtn,this.OnCloseBtnClick)       --绑定关闭按钮点击事件
+
     for i = 1, EnterRoomPanel.NumberBtns.childCount do
         message:AddClick(EnterRoomPanel.NumberBtns:GetChild(i-1).gameObject,this.OnNumbersBtnClick)  --绑定数字按钮点击事件
     end
@@ -68,7 +70,8 @@ function EnterRoomCtrl.Show()            --显示面板
 end
 
 function EnterRoomCtrl.OnNumbersBtnClick(_gameObject)      --数字按钮点击事件
-    roomNumberTextGroup[#roomNumber+1].text=_gameObject.name
+    roomNumberImgGroup[#roomNumber+1].spriteName="output_".._gameObject.name
+    roomNumberImgGroup[#roomNumber+1].gameObject:SetActive(true)
     roomNumber=roomNumber.._gameObject.name
     if #roomNumber==6 then
         this.Enter()
@@ -80,12 +83,16 @@ function EnterRoomCtrl.OnClearAllBtnClick()      --“重输”按钮点击事�
     clearNumber()
 end
 function EnterRoomCtrl.OnDeleteBtnClick()      --“删除”按钮点击事件
+    print("DeleteBtnClick")
     if #roomNumber==0 then
         return
     else
-        roomNumberTextGroup[#roomNumber].text=""
+        roomNumberImgGroup[#roomNumber].gameObject:SetActive(false)
         roomNumber=string.sub(roomNumber,1,-2)
     end
+end
+function EnterRoomCtrl.OnCloseBtnClick()        --关闭按钮点击事件
+    this.Hide()
 end
 
 function EnterRoomCtrl.Enter()                  --进入房间
@@ -95,8 +102,8 @@ function clearNumber()          --清除roomNumber和显示的文本
     if #roomNumber==0 then
         return
     else
-        for i = 1, #roomNumberTextGroup do
-            roomNumberTextGroup[i].text=""
+        for i = 1, #roomNumberImgGroup do
+            roomNumberImgGroup[i].gameObject:SetActive(false)
         end
         roomNumber=""
     end

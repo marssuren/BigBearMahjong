@@ -9,6 +9,7 @@ require "Controller/EnterRoomCtrl"
 require "Controller/StoreCtrl"
 require "Controller/GameMainCtrl"
 require "Controller/LoginCtrl"
+require "Controller/ShareCtrl"
 
 CtrlManager = {};
 local this = CtrlManager;
@@ -26,6 +27,7 @@ function CtrlManager.Init()
 	ctrlList[CtrlNames.Store]=StoreCtrl.New();
 	ctrlList[CtrlNames.GameMain]=GameMainCtrl.New();
 	ctrlList[CtrlNames.Login]=LoginCtrl:New();
+	ctrlList[CtrlNames.Share]=ShareCtrl:New();
 	return this;
 end
 

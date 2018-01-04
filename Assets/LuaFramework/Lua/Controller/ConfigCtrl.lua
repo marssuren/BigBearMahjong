@@ -23,13 +23,15 @@ function ConfigCtrl.OnCreate(_gameObject)
 
     --按钮绑定事件
     message:AddClick(ConfigPanel.MaskBtn,this.OnMaskBtnClick)
-
+    message:AddClick(ConfigPanel.LogoutBtn,this.OnLogoutBtnClick)
+    message:AddClick(ConfigPanel.CloseBtn,this.OnCloseBtnClick)
     --音量Slider绑定事件
     message:AddSliderValueChanged(ConfigPanel.MusicVolumeSlider,this.ChangeMusicVolume)
     --语言Toggle绑定事件
     message:AddToggleValueListener(ConfigPanel.SuZhouDialectToggle,this.OnSuZhouDialectToggleValueChange)
     message:AddToggleValueListener(ConfigPanel.MandarinToggle,this.OnMandarinToggleValueChange)
-    
+
+
 end
 
 function ConfigCtrl.Show()          --显示
@@ -74,6 +76,12 @@ function ConfigCtrl.OnMandarinToggleValueChange(_value)  --"普通话"Toggle值�
         LocalData.SetString("Dialect",DialectType.Mandarin)        
         print(Util.GetString("Dialect","-1"))
     end
+end
+function ConfigCtrl.OnLogoutBtnClick()          --"退出登录"按钮点击事件
+    print("todo:LogoutBtnClick!")
+end
+function ConfigCtrl.OnCloseBtnClick()           --关闭按钮点击事件
+    this.Hide()
 end
 
 

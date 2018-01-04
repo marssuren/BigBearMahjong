@@ -43,10 +43,23 @@ function RuleCtrl.OnCreate(_gameObject)
 
     --绑定按钮点击事件
     message:AddClick(RulePanel.MaskBtn,this.OnMaskBtnClick)
+    message:AddClick(RulePanel.CloseBtn,this.OnCloseBtnClick)
+    message:AddToggleValueListener(RulePanel.ChangShuMahjongToggle,this.OnChangShuMahjongToggleValueChanged)
+    message:AddToggleValueListener(RulePanel.HongZhongMahjongToggle,this.OnHongZhongMahjongToggleValueChanged)
 end
 
 function RuleCtrl.OnMaskBtnClick()              --Mask点击事件
     this.Hide()
+end
+function RuleCtrl.OnCloseBtnClick()             --关闭按钮点击事件
+    this.Hide()
+end
+function RuleCtrl.OnChangShuMahjongToggleValueChanged(_value)     --"常熟麻将"值变化触发事件
+    RulePanel.ChangShuMahjongRuleContent:SetActive(_value)
+
+end
+function RuleCtrl.OnHongZhongMahjongToggleValueChanged(_value)    --"红中麻将"值变化触发事件
+    RulePanel.HongZhongMahjongRuleContent:SetActive(_value)
 end
 
 

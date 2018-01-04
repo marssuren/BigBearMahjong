@@ -10,6 +10,7 @@ CtrlNames = {
 	Store="StoreCtrl",
 	GameMain="GameMainCtrl",
 	Login="LoginCtrl",
+	Share="ShareCtrl",
 }
 
 PanelNames = {
@@ -23,6 +24,7 @@ PanelNames = {
 	StorePanel="StorePanel",
 	GameMainPanel="GameMainPanel",
 	LoginPanel="LoginPanel",
+	SharePanel="SharePanel",
 }
 
 --协议类型--
