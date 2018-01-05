@@ -77,7 +77,7 @@ end
 
 function GameMainCtrl.RefreshUIInfo()                       --刷新UI信息
     GameMainPanel.ReadyBtn:SetActive(not LocalData.IsReady)
-    GameMainPanel.ReadyIcon:SetActive( LocalData.IsReady)             
+    GameMainPanel.ReadyIcon:SetActive(LocalData.IsReady)
 
 end
 
