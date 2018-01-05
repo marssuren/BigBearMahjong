@@ -20,7 +20,7 @@ lua/lua_3rd_pblua.unity3d|6fafd5ce94fef073a7e956626fab6640
 lua/lua_3rd_sproto.unity3d|89321e13ef8663a03c3e392c37e646fd
 lua/lua_cjson.unity3d|64b5a4b22fe45ce790336318a84284c8
 lua/lua_common.unity3d|819c17a105e875c02bc35754cf0e4c1e
-lua/lua_controller.unity3d|f7aa555efd4e5fb3206b35fff405ae7d
+lua/lua_controller.unity3d|9fb16a6a433485dadc3630eb886bed21
 lua/lua_jit.unity3d|0a98b8ba4fce9f351b7c09f000f868cc
 lua/lua_logic.unity3d|1190940a05bcb1392d60ecb18b6a25ba
 lua/lua_lpeg.unity3d|8deb8a4c2d77e09f21fc034659f5b59e
