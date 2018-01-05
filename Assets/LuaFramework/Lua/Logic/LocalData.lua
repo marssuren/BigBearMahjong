@@ -2,6 +2,7 @@ LocalData={}
 local this=LocalData;       --用来保存本地信息
 
 local Dialect;              --方言类型
+local IsReady;              --是否准备
 
 
 function LocalData.Init( ... )      --初始化相关

@@ -253,7 +253,7 @@ public class Packager {
         ///------------------------------生成MessagePanel素材绑定-----------------------------------
         BuildPipeline.PushAssetDependencies();
         mainAsset = LoadAsset("Message/Prefabs/MessagePanel.prefab");
-        assetfile = assetPath + "message" + AppConst.ExtName;
+        assetfile = assetPath + "messagepanel" + AppConst.ExtName;
         BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
         BuildPipeline.PopAssetDependencies();
 
@@ -261,7 +261,7 @@ public class Packager {
 		///-------------------------------生成HallPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 	    mainAsset = LoadAsset("Home/Prefabs/HallPanel.prefab");
-	    assetfile = assetPath + "hall" + AppConst.ExtName;
+	    assetfile = assetPath + "hallpanel" + AppConst.ExtName;
 	    BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
@@ -269,7 +269,7 @@ public class Packager {
 		///-------------------------------生成RulePanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/RulePanel.prefab");
-		assetfile = assetPath + "rule" + AppConst.ExtName;
+		assetfile = assetPath + "rulepanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
@@ -277,7 +277,7 @@ public class Packager {
 		///-------------------------------生成ConfigPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/ConfigPanel.prefab");
-		assetfile = assetPath + "config" + AppConst.ExtName;
+		assetfile = assetPath + "configpanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
@@ -285,7 +285,7 @@ public class Packager {
 		///-------------------------------生成CreateRoomPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/CreateRoomPanel.prefab");
-		assetfile = assetPath + "createroom" + AppConst.ExtName;
+		assetfile = assetPath + "createroompanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
@@ -293,7 +293,7 @@ public class Packager {
 		///-------------------------------生成EnterRoomPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/EnterRoomPanel.prefab");
-		assetfile = assetPath + "enterroom" + AppConst.ExtName;
+		assetfile = assetPath + "enterroompanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
@@ -301,28 +301,28 @@ public class Packager {
 		///-------------------------------生成StorePanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/StorePanel.prefab");
-		assetfile = assetPath + "store" + AppConst.ExtName;
+		assetfile = assetPath + "storepanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
 		///-------------------------------生成GameMainPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/GameMainPanel.prefab");
-		assetfile = assetPath + "gamemain" + AppConst.ExtName;
+		assetfile = assetPath + "gamemainpanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
 		///-------------------------------生成LoginPanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/LoginPanel.prefab");
-		assetfile = assetPath + "login" + AppConst.ExtName;
+		assetfile = assetPath + "loginpanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 
 		///-------------------------------生成SharePanel素材绑定-------------------------------
 		BuildPipeline.PushAssetDependencies();
 		mainAsset = LoadAsset("Home/Prefabs/SharePanel.prefab");
-		assetfile = assetPath + "share" + AppConst.ExtName;
+		assetfile = assetPath + "sharepanel" + AppConst.ExtName;
 		BuildPipeline.BuildAssetBundle(mainAsset, null, assetfile, options, target);
 		BuildPipeline.PopAssetDependencies();
 

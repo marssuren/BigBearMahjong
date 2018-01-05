@@ -20,7 +20,7 @@ end
 
 
 function EnterRoomCtrl.Awake()
-    panelMgr:CreatePanel('EnterRoom',this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.EnterRoomPanel,this.OnCreate)
 end
 
 function EnterRoomCtrl.OnCreate(_gameObject)

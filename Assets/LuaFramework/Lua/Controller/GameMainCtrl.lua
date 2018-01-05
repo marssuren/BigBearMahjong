@@ -10,7 +10,7 @@ function GameMainCtrl.New( )
     return this
 end
 function GameMainCtrl.Awake( ... )
-    panelMgr:CreatePanel('GameMain',this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.GameMainPanel,this.OnCreate)
 end
 function GameMainCtrl.OnCreate( _gameObject )
     gameObject=_gameObject
@@ -20,6 +20,16 @@ function GameMainCtrl.OnCreate( _gameObject )
     --绑定按钮点击事件
     message:AddClick(GameMainPanel.MicphoneBtn,this.OnMicphoneBtnClick)
     message:AddClick(GameMainPanel.MessageBtn,this.OnMessageBtnClick)
+    message:AddClick(GameMainPanel.ReadyBtn,this.OnReadyBtnClick)
+    message:AddClick(GameMainPanel.DismissRoomBtn,this.OnDismissRoomBtnClick)
+    message:AddClick(GameMainPanel.InviteFriendsBtn,this.OnInviteFriendsBtnClick)
+    message:AddClick(GameMainPanel.ExitRoomBtn,this.OnExitRoomBtnClick)
+
+end
+function GameMainCtrl.OnEnable()			--页面激活
+
+end
+function GameMainCtrl.OnDisable()           --页面隐藏
 
 end
 function GameMainCtrl:Show()
@@ -33,21 +43,43 @@ end
 
 function GameMainCtrl:Hide()
 	if nil~=gameObject then
-		panelMgr:SetPanelActive(PanelNames.GameMainPanel,false)
+		panelMgr:SetPanelActive(PanelNames.GameMainPanel,false,this.OnDisable)
 	end
 end
 
-function GameMainCtrl.OnEnable()			--页面激活
 
-end
 
-function OnMicphoneBtnClick( ... )          --Micphone按钮点击事件
+
+
+function GameMainCtrl.OnMicphoneBtnClick( ... )          --Micphone按钮点击事件
     print("todo:MicphoneBtnClick！")
 end
-function OnMessageBtnClick( ... )           --MessageBtn按钮点击事件
+function GameMainCtrl.OnMessageBtnClick( ... )           --MessageBtn按钮点击事件
     print("todo:MessageBtnClick！")
 end
+function GameMainCtrl.OnReadyBtnClick()                  --准备按钮点击事件
+    print("todo:ReadyBtnClick")
+    LocalData.IsReady=true
+    this.RefreshUIInfo()
+end
+function GameMainCtrl.OnInviteFriendsBtnClick( ... )           --"邀请好友"按钮点击事件
+    print("todo:InviteFriendsBtnClick！")
+end
+function GameMainCtrl.OnDismissRoomBtnClick( ... )           --"解散房间"按钮点击事件
+    print("todo:DismissRoomBtnClick！")
+end
+function GameMainCtrl.OnExitRoomBtnClick( ... )           --"退出房间"按钮点击事件
+    print("todo:ExitRoomBtnClick！")
+    LocalData.IsReady=false
+    this.RefreshUIInfo()
+    this.Hide()
+end
 
+function GameMainCtrl.RefreshUIInfo()                       --刷新UI信息
+    GameMainPanel.ReadyBtn:SetActive(not LocalData.IsReady)
+    GameMainPanel.ReadyIcon:SetActive( LocalData.IsReady)             
+
+end
 
 
 

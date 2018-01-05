@@ -40,7 +40,7 @@ namespace LuaFramework
 		{
 			AssetBundle bundle = ResManager.LoadBundle(name);
 
-			name += "Panel";
+			
 			GameObject prefab = null;
 #if UNITY_5
 			prefab = bundle.LoadAsset(name, typeof(GameObject)) as GameObject;
@@ -75,30 +75,26 @@ namespace LuaFramework
 		/// 关闭面板
 		/// </summary>
 		/// <param name="name"></param>
-		public void ClosePanel(string name)
+		public void ClosePanel(string _panelName)
 		{
-			var panelName = name + "Panel";
-			var panelObj = Parent.FindChild(panelName);
+			var panelObj = Parent.FindChild(_panelName);
 			if(panelObj == null)
 				return;
 			Destroy(panelObj.gameObject);
-			if(loadedPanelDic.ContainsKey(panelName))
+			if(loadedPanelDic.ContainsKey(_panelName))
 			{
-				loadedPanelDic.Remove(panelName);       //销毁需要移除Panel
+				loadedPanelDic.Remove(_panelName);       //销毁需要移除Panel
 			}
 		}
 
-		public void SetPanelActive(string _panelName, bool _isShow, LuaFunction _luaFunction = null)          //控制面板是否显示
+		public void SetPanelActive(string _panelName, bool _isShow, LuaFunction _luaFunction = null)      //控制面板是否显示
 		{
-			//Debug.LogError(_panelName + "!!!!!!!!!");
 			if(loadedPanelDic.ContainsKey(_panelName))
 			{
-				//Debug.LogError(loadedPanelDic[_panelName].gameObject.activeSelf);
 				loadedPanelDic[_panelName].SetActive(_isShow);
 				if(null != _luaFunction)
 				{
 					_luaFunction.Call();        //执行刷新回调
-					UIToggle tToggle = null;
 				}
 			}
 		}

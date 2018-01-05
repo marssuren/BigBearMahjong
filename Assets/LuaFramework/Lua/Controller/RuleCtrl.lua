@@ -12,7 +12,7 @@ function RuleCtrl.New()
     return this
 end
 function RuleCtrl.Awake()
-        panelMgr:CreatePanel('Rule',this.OnCreate)
+        panelMgr:CreatePanel(PanelNames.RulePanel,this.OnCreate)
 end
 
 function RuleCtrl.Show()            --显示面板

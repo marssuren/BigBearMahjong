@@ -617,8 +617,10 @@ public class UnityEngine_WWWWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+#if !UNITY_WEBGL
 			UnityEngine.ThreadPriority ret = obj.threadPriority;
 			ToLua.Push(L, ret);
+#endif
 			return 1;
 		}
 		catch(Exception e)
@@ -636,8 +638,10 @@ public class UnityEngine_WWWWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+#if !UNITY_WEBGL
 			UnityEngine.ThreadPriority arg0 = (UnityEngine.ThreadPriority)ToLua.CheckObject(L, 2, typeof(UnityEngine.ThreadPriority));
 			obj.threadPriority = arg0;
+#endif
 			return 0;
 		}
 		catch(Exception e)

@@ -11,7 +11,7 @@ function ConfigCtrl.New()
 end
 
 function ConfigCtrl.Awake()
-    panelMgr:CreatePanel('Config',this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.ConfigPanel,this.OnCreate)
 end
 
 

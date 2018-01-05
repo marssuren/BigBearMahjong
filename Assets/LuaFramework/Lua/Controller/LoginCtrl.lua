@@ -13,7 +13,7 @@ function LoginCtrl.New()
 end
 
 function LoginCtrl.Awake()
-    panelMgr:CreatePanel('Login',this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.LoginPanel,this.OnCreate)
 end
 function LoginCtrl.Show()
     if nil==gameObject then

@@ -14,7 +14,7 @@ function CreateRoomCtrl.New()
 end
 
 function CreateRoomCtrl.Awake()
-    panelMgr:CreatePanel('CreateRoom',this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.CreateRoomPanel,this.OnCreate)
 end
 
 function CreateRoomCtrl.Show()            --显示面板

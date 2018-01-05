@@ -13,7 +13,7 @@ function HallCtrl.New()
 end
 
 function HallCtrl.Awake()
-	panelMgr:CreatePanel('Hall',this.OnCreate)
+	panelMgr:CreatePanel(PanelNames.HallPanel,this.OnCreate)
 end
 
 function HallCtrl.OnCreate(_gameObject)

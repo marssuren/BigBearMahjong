@@ -9,7 +9,7 @@ function StoreCtrl.New( )
     return this
 end
 function StoreCtrl.Awake( ... )
-    panelMgr:CreatePanel('Store',this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.StorePanel,this.OnCreate)
 end
 function StoreCtrl.OnCreate( _gameObject )
     gameObject=_gameObject

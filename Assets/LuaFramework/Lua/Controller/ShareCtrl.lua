@@ -9,7 +9,7 @@ function ShareCtrl.New()
     return this
 end
 function ShareCtrl.Awake()
-    panelMgr:CreatePanel("Share",this.OnCreate)
+    panelMgr:CreatePanel(PanelNames.SharePanel,this.OnCreate)
 end
 function ShareCtrl.Show()            --显示面板
     if gameObject==nil then
