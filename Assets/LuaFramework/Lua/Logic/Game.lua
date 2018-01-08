@@ -16,7 +16,8 @@ require "Common/functions"
 require "Logic/LuaClass"
 require "Logic/CtrlManager"
 
-require "Logic/LocalData"
+require "Model/GameModel"
+require "Model/MatchRoomDto"
 
 require "Controller/PromptCtrl"
 require "Controller/HallCtrl"

@@ -213,6 +213,12 @@
      <Compile Include="Assets\LuaFramework\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Manager\ThreadManager.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Manager\TimerManager.cs" />
+     <Compile Include="Assets\LuaFramework\Scripts\MyNet\ClientPeer.cs" />
+     <Compile Include="Assets\LuaFramework\Scripts\MyNet\EncodeTool.cs" />
+     <Compile Include="Assets\LuaFramework\Scripts\MyNet\HandlerBase.cs" />
+     <Compile Include="Assets\LuaFramework\Scripts\MyNet\MatchHandler.cs" />
+     <Compile Include="Assets\LuaFramework\Scripts\MyNet\MyNetManager.cs" />
+     <Compile Include="Assets\LuaFramework\Scripts\MyNet\SocketMessage.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Network\ByteBuffer.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Network\Converter.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Network\Protocal.cs" />
@@ -472,6 +478,9 @@
  </Reference>
  <Reference Include="Debugger">
  <HintPath>G:/Dev/UnityProject/LuaFramework_NGUI-master/BigBearMahjong/Assets/Plugins/Debugger.dll</HintPath>
+ </Reference>
+ <Reference Include="Protocol">
+ <HintPath>G:/Dev/UnityProject/LuaFramework_NGUI-master/BigBearMahjong/Assets/Plugins/Protocol.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>G:/Dev/Unity5.5/InsFolder/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

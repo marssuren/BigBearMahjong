@@ -29,6 +29,5 @@ end
 
 function GameManager.EnterRoom()								--进入房间
 	local tGameMainCtrl=CtrlManager.GetCtrl(CtrlNames.GameMain)
-	print(nil==tGameMainCtrl)
 	tGameMainCtrl:Show()
 end
