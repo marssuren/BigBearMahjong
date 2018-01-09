@@ -6,4 +6,6 @@ Protocal = {
 	Message		= '104';	--接收消息
 }
 
-
+MyProtocal={
+	CreateRoom="1000"			--创建房间
+}

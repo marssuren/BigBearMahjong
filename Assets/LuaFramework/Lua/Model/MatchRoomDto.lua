@@ -8,11 +8,11 @@ RighPlayertId =0            --位于当前客户端玩家的右边的玩家的Id
 OppsitePlayerId =0          --位于当前客户端玩家的对面的玩家的Id
 
 
-function MatchRoomDto:new(o)
-    o = o or {}
-    setmetatable(o, self)
+function MatchRoomDto:new(_o)
+    _o = _o or {}
+    setmetatable(_o, self)
     self.__index = self
-    return o
+    return _o
 end
 
 function MatchRoomDto.Add(_newPlayer)               --房间新入玩家

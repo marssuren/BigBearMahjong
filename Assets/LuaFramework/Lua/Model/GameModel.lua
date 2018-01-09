@@ -4,28 +4,17 @@ require "Class"
 
 GameModel={}
 local this=GameModel;        --客户端数据的存取类
-local MyPlayerDto=nil;
+local MyPlayerDto=PlayerDto:new()
 
 local Dialect;              --方言类型
 local MatchRoomDto=MatchRoomDto:new()           --当前匹配进入的房间
 
 
-function GameModel:GetInstance()
-    if nil==self.m_pInstance then
-        self.m_pInstance=Class:new(GameModel)
-    end
-    return self.m_pInstance
-end
 
 function GameModel:GetMyPlayerDto()
-    print(nil==MyPlayerDto)
-    if MyPlayerDto == nil then
-        MyPlayerDto=Class:new(PlayerDto)   --客户端用户数据
-        print(nil==MyPlayerDto)
-    end
-
-    return this.MyPlayerDto
+    return MyPlayerDto
 end
+
 --function GameModel.GetPlayerDto(_playerId)      --获取房间内某个玩家的信息
 --    return MatchRoomDto.PlayerDic[_playerId]
 --end

@@ -247,6 +247,9 @@
  <Reference Include="Debugger">
  <HintPath>G:/Dev/UnityProject/LuaFramework_NGUI-master/BigBearMahjong/Assets/Plugins/Debugger.dll</HintPath>
  </Reference>
+ <Reference Include="Protocol">
+ <HintPath>G:/Dev/UnityProject/LuaFramework_NGUI-master/BigBearMahjong/Assets/Plugins/Protocol.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>G:/Dev/Unity5.5/InsFolder/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -261,9 +264,6 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>G:/Dev/Unity5.5/InsFolder/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="Protocol">
- <HintPath>G:/Dev/UnityProject/LuaFramework_NGUI-master/BigBearMahjong/Assets/Plugins/Protocol.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>G:/Dev/Unity5.5/InsFolder/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

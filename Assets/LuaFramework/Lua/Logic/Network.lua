@@ -23,7 +23,10 @@ function Network.Start()
     Event.AddListener(Protocal.Connect, this.OnConnect); 
     Event.AddListener(Protocal.Message, this.OnMessage); 
     Event.AddListener(Protocal.Exception, this.OnException); 
-    Event.AddListener(Protocal.Disconnect, this.OnDisconnect); 
+    Event.AddListener(Protocal.Disconnect, this.OnDisconnect);
+
+
+    Event.AddListener(MyProtocal.CreateRoom,this.OnCreateRoom)
 end
 
 --Socket消息--
@@ -145,4 +148,8 @@ function Network.Unload()
     Event.RemoveListener(Protocal.Exception);
     Event.RemoveListener(Protocal.Disconnect);
     logWarn('Unload Network...');
+end
+
+function Network.OnCreateRoom()
+
 end
