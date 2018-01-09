@@ -14,10 +14,11 @@ public class MyNetManager : MonoBehaviour
 	void Awake()
 	{
 		Instance = this;
+		init();
 	}
 	void Start()
 	{
-		clientPeer.Connect();
+		//clientPeer.Connect();
 	}
 	void Update()
 	{
@@ -43,5 +44,13 @@ public class MyNetManager : MonoBehaviour
 			//default:
 			//	break;
 		}
+	}
+	public void SendConnect()
+	{
+		clientPeer.Connect();
+	}
+	private void init()
+	{
+
 	}
 }

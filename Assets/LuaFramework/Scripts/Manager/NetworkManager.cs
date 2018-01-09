@@ -8,19 +8,33 @@ namespace LuaFramework
 {
 	public class NetworkManager : Manager
 	{
-		private SocketClient socket;
-		static readonly object m_lockObject = new object();
-		static Queue<KeyValuePair<int, ByteBuffer>> mEvents = new Queue<KeyValuePair<int, ByteBuffer>>();
-
-		SocketClient SocketClient
+		//private SocketClient socket;
+		private ClientPeer _clientPeer;
+		private ClientPeer clientPeer
 		{
 			get
 			{
-				if(socket == null)
-					socket = new SocketClient();
-				return socket;
+				if (null==_clientPeer)
+				{
+					_clientPeer=new ClientPeer(AppConst.SocketAddress,AppConst.SocketPort);
+				}
+
+				return _clientPeer;
 			}
 		}
+
+		static readonly object m_lockObject = new object();
+		static Queue<KeyValuePair<int, ByteBuffer>> mEvents = new Queue<KeyValuePair<int, ByteBuffer>>();
+
+		//SocketClient SocketClient
+		//{
+		//	get
+		//	{
+		//		if(socket == null)
+		//			socket = new SocketClient();
+		//		return socket;
+		//	}
+		//}
 
 		void Awake()
 		{
@@ -29,7 +43,7 @@ namespace LuaFramework
 
 		void Init()
 		{
-			SocketClient.OnRegister();
+			//SocketClient.OnRegister();
 		}
 
 		public void OnInit()
@@ -79,17 +93,24 @@ namespace LuaFramework
 		/// </summary>
 		public void SendConnect()
 		{
-			SocketClient.SendConnect();
+			//SocketClient.SendConnect();
+			clientPeer.Connect();
 		}
 
 		/// <summary>
 		/// ·¢ËÍSOCKETÏûÏ¢
 		/// </summary>
-		public void SendMessage(ByteBuffer buffer)
+		//public void SendMessage(ByteBuffer buffer)
+		//{
+		//	Debug.LogError(null == SocketClient);
+		//	SocketClient.SendMessage(buffer);
+		//}
+
+		public void SendSocketMessage(int _opCode,int _subCode,object _value)
 		{
-			Debug.LogError(null == SocketClient);
-			SocketClient.SendMessage(buffer);
+			clientPeer.Send(_opCode,_subCode,_value);
 		}
+
 
 
 
@@ -97,7 +118,7 @@ namespace LuaFramework
 		public void SendByteMessage(byte[] _byteMessage)
 		{
 			ByteBuffer tByteBuffer = new ByteBuffer(_byteMessage);
-			SocketClient.SendMessage(tByteBuffer);
+			//SocketClient.SendMessage(tByteBuffer);
 
 		}
 
@@ -107,7 +128,7 @@ namespace LuaFramework
 		/// </summary>
 		new void OnDestroy()
 		{
-			SocketClient.OnRemove();
+			//SocketClient.OnRemove();
 			Debug.Log("~NetworkManager was destroy");
 		}
 	}

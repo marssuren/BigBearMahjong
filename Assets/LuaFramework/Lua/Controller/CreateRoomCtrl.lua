@@ -71,6 +71,9 @@ function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
 
         end
     end
+    networkMgr:SendSocketMessage(0,MyProtocal.CreateRoom,"mix");
+
+
     this.Hide();
     GameManager.EnterRoom()          --进入房间
 end

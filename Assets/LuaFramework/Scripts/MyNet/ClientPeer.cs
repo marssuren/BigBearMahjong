@@ -47,9 +47,7 @@ public class ClientPeer
 			Debug.LogError("连接失败，无法发送数据");
 			return;
 		}
-
 		clientSocket.BeginReceive(receiveBuffer, 0, 1024, SocketFlags.None, receiveCallBack, clientSocket);
-
 	}
 	private void receiveCallBack(IAsyncResult _asyncResult)             //收到消息的回调
 	{
@@ -88,6 +86,7 @@ public class ClientPeer
 	}
 	public void Send(int _opCode, int _subCode, object _value)          //发送消息
 	{
+		//Debug.LogError("!!!"+_opCode+"!"+_subCode+ "!"+_value.ToString());
 		SocketMessage tSocketMessage = new SocketMessage(_opCode, _subCode, _value);
 		sendSocketMessage(tSocketMessage);
 	}

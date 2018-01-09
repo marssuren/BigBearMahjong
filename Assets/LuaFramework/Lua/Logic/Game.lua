@@ -42,20 +42,20 @@ end
 --初始化完成，发送链接服务器信息--
 function Game.OnInitOK()
     AppConst.SocketPort = 5056;--2012;
-    AppConst.SocketAddress = "192.168.3.128";--"117.80.69.120";
+    AppConst.SocketAddress = "127.0.0.1";--"117.80.69.120";
     networkMgr:SendConnect();
 
 
-    local str="请求服务器"
-    print(str)
+    local str="123"
+    --print(str)
     local byte={}
     for i = 1, #str do
         print(string.sub(str,i,i))
         table.insert(byte,string.byte(string.sub(str,i,i)))
     end
-
-    local buffer=ByteBuffer(str)
-    print(nil==networkMgr)
+    networkMgr:SendSocketMessage(0,MyProtocal.CreateRoom,str)
+    --local buffer=ByteBuffer(str)
+    --print(nil==networkMgr)
     --networkMgr:SendMessage(buffer)
 
 
