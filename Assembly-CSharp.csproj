@@ -216,8 +216,6 @@
      <Compile Include="Assets\LuaFramework\Scripts\MyNet\ClientPeer.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\MyNet\EncodeTool.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\MyNet\HandlerBase.cs" />
-     <Compile Include="Assets\LuaFramework\Scripts\MyNet\MatchHandler.cs" />
-     <Compile Include="Assets\LuaFramework\Scripts\MyNet\MyNetManager.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\MyNet\SocketMessage.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Network\ByteBuffer.cs" />
      <Compile Include="Assets\LuaFramework\Scripts\Network\Converter.cs" />
@@ -347,6 +345,7 @@
      <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaInterface_DebuggerWrap.cs" />
      <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\LuaProfilerWrap.cs" />
      <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\ManagerWrap.cs" />
+     <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\SocketMessageWrap.cs" />
      <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\UIBasicSpriteWrap.cs" />
      <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\UIGridWrap.cs" />
      <Compile Include="Assets\LuaFramework\ToLua\Source\Generate\UILabelWrap.cs" />

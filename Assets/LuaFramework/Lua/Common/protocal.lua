@@ -6,6 +6,12 @@ Protocal = {
 	Message		= '104';	--接收消息
 }
 
-MyProtocal={
-	CreateRoom="1000"			--创建房间
+
+OpCode={
+	Account=0
+}
+
+SubCode={
+	CreateRoom_ClientReq=1000,			--创建房间客户端请求
+	CreateRoom_ServerRes=1001,				--创建房间服务器回应
 }

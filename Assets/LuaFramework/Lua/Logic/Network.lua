@@ -26,7 +26,7 @@ function Network.Start()
     Event.AddListener(Protocal.Disconnect, this.OnDisconnect);
 
 
-    Event.AddListener(MyProtocal.CreateRoom,this.OnCreateRoom)
+
 end
 
 --Socket消息--
@@ -150,6 +150,15 @@ function Network.Unload()
     logWarn('Unload Network...');
 end
 
-function Network.OnCreateRoom()
+function Network.ProcessSocketMessage(_socketMessage)     --处理Socket信息
+    print(_socketMessage.OpCode)
+    print(_socketMessage.SubCode)
+    print(_socketMessage.Value)
+
+    if _socketMessage.OpCode==OpCode.Account then
+        AccountHandler:Process(_socketMessage.SubCode,_socketMessage.Value)
+    end
+
+
 
 end

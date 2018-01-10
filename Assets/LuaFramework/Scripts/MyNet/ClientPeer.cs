@@ -38,7 +38,6 @@ public class ClientPeer
 		{
 			Debug.LogError(_e.Message);
 		}
-
 	}
 	private void startReceive()                         //开始接受数据
 	{
@@ -68,8 +67,6 @@ public class ClientPeer
 		{
 			Debug.LogError(_e.Message);
 		}
-
-
 	}
 	private void processReceive()
 	{
@@ -102,6 +99,5 @@ public class ClientPeer
 		{
 			Debug.LogError(_exception.Message);
 		}
-
 	}
 }

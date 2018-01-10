@@ -14,9 +14,9 @@ namespace LuaFramework
 		{
 			get
 			{
-				if (null==_clientPeer)
+				if(null == _clientPeer)
 				{
-					_clientPeer=new ClientPeer(AppConst.SocketAddress,AppConst.SocketPort);
+					_clientPeer = new ClientPeer(AppConst.SocketAddress, AppConst.SocketPort);
 				}
 
 				return _clientPeer;
@@ -78,14 +78,32 @@ namespace LuaFramework
 		/// </summary>
 		void Update()
 		{
-			if(mEvents.Count > 0)
+			//if(mEvents.Count > 0)
+			//{
+			//	while(mEvents.Count > 0)
+			//	{
+			//		KeyValuePair<int, ByteBuffer> _event = mEvents.Dequeue();
+			//		facade.SendMessageCommand(NotiConst.DISPATCH_MESSAGE, _event);
+			//	}
+			//}
+			if(clientPeer.SocketMsgQueue.Count > 0)
 			{
-				while(mEvents.Count > 0)
-				{
-					KeyValuePair<int, ByteBuffer> _event = mEvents.Dequeue();
-					facade.SendMessageCommand(NotiConst.DISPATCH_MESSAGE, _event);
-				}
+				SocketMessage tSocketMessage = clientPeer.SocketMsgQueue.Dequeue();
+				processMessage(tSocketMessage);
 			}
+		}
+		private void processMessage(SocketMessage _socketMessage)
+		{
+
+			//int tOpCode = _socketMessage.OpCode;
+			//int tSubCode = _socketMessage.SubCode;
+			//object tValue = _socketMessage.Value;
+			//Debug.LogError(tOpCode);
+			//Debug.LogError(tSubCode);
+
+			//Debug.LogError(tValue);
+
+			Util.CallMethod("Network","ProcessSocketMessage",_socketMessage);
 		}
 
 		/// <summary>
@@ -106,27 +124,20 @@ namespace LuaFramework
 		//	SocketClient.SendMessage(buffer);
 		//}
 
-		public void SendSocketMessage(int _opCode,int _subCode,object _value)
+		public void SendSocketMessage(int _opCode, int _subCode, object _value)
 		{
-			clientPeer.Send(_opCode,_subCode,_value);
+			//Debug.LogError(_opCode==null||_subCode==null||_value==null);
+			clientPeer.Send(_opCode, _subCode, _value);
 		}
-
-
-
-
-
 		public void SendByteMessage(byte[] _byteMessage)
 		{
 			ByteBuffer tByteBuffer = new ByteBuffer(_byteMessage);
 			//SocketClient.SendMessage(tByteBuffer);
-
 		}
-
-
 		/// <summary>
 		/// Îö¹¹º¯Êý
 		/// </summary>
-		new void OnDestroy()
+		void OnDestroy()
 		{
 			//SocketClient.OnRemove();
 			Debug.Log("~NetworkManager was destroy");

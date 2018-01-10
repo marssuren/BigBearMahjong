@@ -46,14 +46,8 @@ function Game.OnInitOK()
     networkMgr:SendConnect();
 
 
-    local str="123"
-    --print(str)
-    local byte={}
-    for i = 1, #str do
-        print(string.sub(str,i,i))
-        table.insert(byte,string.byte(string.sub(str,i,i)))
-    end
-    networkMgr:SendSocketMessage(0,MyProtocal.CreateRoom,str)
+    --local str="123"
+    --networkMgr:SendSocketMessage(0,1000,str)
     --local buffer=ByteBuffer(str)
     --print(nil==networkMgr)
     --networkMgr:SendMessage(buffer)

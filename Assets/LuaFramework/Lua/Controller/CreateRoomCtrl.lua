@@ -66,12 +66,13 @@ end
 function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
     if CreateRoomPanel.MixedMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建花麻将房间")
+        networkMgr:SendSocketMessage(OpCode.Account,SubCode.CreateRoom_ClientReq,"CreateMixMahjongRoom");
     else if CreateRoomPanel.HundredMatchMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建百搭麻将房间")
 
         end
     end
-    networkMgr:SendSocketMessage(0,MyProtocal.CreateRoom,"mix");
+
 
 
     this.Hide();

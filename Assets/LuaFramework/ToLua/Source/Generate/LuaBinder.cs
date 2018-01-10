@@ -16,6 +16,7 @@ public static class LuaBinder
 		UISliderWrap.Register(L);
 		UIToggleWrap.Register(L);
 		UIGridWrap.Register(L);
+		SocketMessageWrap.Register(L);
 		UISpriteWrap.Register(L);
 		UIRectWrap.Register(L);
 		UIWidgetWrap.Register(L);

@@ -14,6 +14,9 @@ local MatchRoomDto=MatchRoomDto:new()           --当前匹配进入的房间
 function GameModel:GetMyPlayerDto()
     return MyPlayerDto
 end
+function GameModel:GetMatchRoomDto()
+    return MatchRoomDto
+end
 
 --function GameModel.GetPlayerDto(_playerId)      --获取房间内某个玩家的信息
 --    return MatchRoomDto.PlayerDic[_playerId]

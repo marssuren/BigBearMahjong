@@ -1,5 +1,7 @@
 MatchRoomDto={}
 
+
+RoomId=""
 PlayerDic={}                      --房间内所有用户的Dic
 ReadyPlayerIdList={}              --房间内准备了的用户的Id的List
 PlayerIdList={}                   --房间内所有的用户的Id的List
