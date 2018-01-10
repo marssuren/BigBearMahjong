@@ -1,8 +1,11 @@
 AccountHandler={}
 local this=AccountHandler
 
+
+
+
 function AccountHandler.Process(_subCode,_value)
-    if _subCode==MyProtocal.CreateRoom_ServerRes then
+    if _subCode==SubCode.CreateRoom_ServerRes then
         
     end
 end

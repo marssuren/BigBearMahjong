@@ -13,6 +13,7 @@ public class ClientPeer
 	private List<byte> dataCache = new List<byte>();    //用于接收到数据存放入的缓冲区
 	private bool isProcessReceiving;                    //是否正在处理接收
 	public Queue<SocketMessage> SocketMsgQueue = new Queue<SocketMessage>();       //缓存接收到的服务器数据
+	private SocketMessage socketMessage = new SocketMessage(-1, -1, null);
 
 	public ClientPeer(string _ip, int _port)            //初始化
 	{
@@ -84,8 +85,8 @@ public class ClientPeer
 	public void Send(int _opCode, int _subCode, object _value)          //发送消息
 	{
 		//Debug.LogError("!!!"+_opCode+"!"+_subCode+ "!"+_value.ToString());
-		SocketMessage tSocketMessage = new SocketMessage(_opCode, _subCode, _value);
-		sendSocketMessage(tSocketMessage);
+		socketMessage.Change(_opCode, _subCode, _value);
+		sendSocketMessage(socketMessage);
 	}
 	private void sendSocketMessage(SocketMessage _socketMessage)
 	{
