@@ -60,11 +60,10 @@ function GameMainCtrl.OnMessageBtnClick( ... )           --MessageBtn按钮点�
     print("todo:MessageBtnClick！")
 end
 function GameMainCtrl.OnReadyBtnClick()                  --准备按钮点击事件
-    print("todo:ReadyBtnClick")
-    print(nil==GameModel:GetMyPlayerDto())
-    GameModel:GetMyPlayerDto().IsReady=true
+    networkMgr:SendSocketMessage(OpCode.Battle,SubCode.Ready_ClientReq,GameModel:GetMyPlayerDto().ID)
 
-    this.RefreshUIInfo()
+
+
 end
 function GameMainCtrl.OnInviteFriendsBtnClick( ... )           --"邀请好友"按钮点击事件
     print("todo:InviteFriendsBtnClick！")
@@ -74,15 +73,12 @@ function GameMainCtrl.OnDismissRoomBtnClick( ... )           --"解散房间"按
 end
 function GameMainCtrl.OnExitRoomBtnClick( ... )           --"退出房间"按钮点击事件
     print("todo:ExitRoomBtnClick！")
-    GameModel:GetMyPlayerDto().IsReady=false
-    this.RefreshUIInfo()
-    this.Hide()
+    networkMgr:SendSocketMessage(OpCode.Room,SubCode.ExitRoom_ClientReq,GameModel:GetMatchRoomDto().RoomId)
 end
 
-function GameMainCtrl.RefreshUIInfo()                       --刷新UI信息
+function GameMainCtrl:RefreshUIInfo()                       --刷新UI信息
     GameMainPanel.ReadyBtn:SetActive(not GameModel:GetMyPlayerDto().IsReady)
     GameMainPanel.ReadyIcon:SetActive(GameModel:GetMyPlayerDto().IsReady)
-
 end
 
 

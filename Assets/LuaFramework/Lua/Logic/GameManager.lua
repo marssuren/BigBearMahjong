@@ -28,6 +28,10 @@ end
 
 
 function GameManager.EnterRoom()								--进入房间
+	local tCreateRoomCtrl=CtrlManager.GetCtrl(CtrlNames.CreateRoom)
+	tCreateRoomCtrl:Hide()
+	local tEnterRoomCtrl=CtrlManager.GetCtrl(CtrlNames.EnterRoom)
+	tEnterRoomCtrl:Hide()
 	local tGameMainCtrl=CtrlManager.GetCtrl(CtrlNames.GameMain)
 	tGameMainCtrl:Show()
 end

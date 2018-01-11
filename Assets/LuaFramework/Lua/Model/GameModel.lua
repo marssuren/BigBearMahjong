@@ -3,7 +3,7 @@ require "Model/MatchRoomDto"
 require "Class"
 
 GameModel={}
-local this=GameModel;        --客户端数据的存取类
+local this=GameModel;        --客户端数据的管理类
 local MyPlayerDto=PlayerDto:new()
 
 local Dialect;              --方言类型
@@ -17,6 +17,13 @@ end
 function GameModel:GetMatchRoomDto()
     return MatchRoomDto
 end
+function GameModel:Ready()                      --准备
+    MyPlayerDto.IsReady=true
+end
+function GameModel:CancelReady()                --取消准备
+    MyPlayerDto.IsReady=false
+end
+
 
 --function GameModel.GetPlayerDto(_playerId)      --获取房间内某个玩家的信息
 --    return MatchRoomDto.PlayerDic[_playerId]

@@ -5,9 +5,9 @@ RoomId=""
 PlayerDic={}                      --房间内所有用户的Dic
 ReadyPlayerIdList={}              --房间内准备了的用户的Id的List
 PlayerIdList={}                   --房间内所有的用户的Id的List
-LeftPlayerId=0              --位于当前客户端玩家的左边的玩家的Id
-RighPlayertId =0            --位于当前客户端玩家的右边的玩家的Id
-OppsitePlayerId =0          --位于当前客户端玩家的对面的玩家的Id
+LeftPlayerId=""              --位于当前客户端玩家的左边的玩家的Id
+RighPlayertId =""            --位于当前客户端玩家的右边的玩家的Id
+OppsitePlayerId =""          --位于当前客户端玩家的对面的玩家的Id
 
 
 function MatchRoomDto:new(_o)
@@ -15,6 +15,13 @@ function MatchRoomDto:new(_o)
     setmetatable(_o, self)
     self.__index = self
     return _o
+end
+
+function MatchRoomDto.RefreshData()
+    RoomId=""
+    LeftPlayerId=""
+    RighPlayertId =""
+    OppsitePlayerId =""
 end
 
 function MatchRoomDto.Add(_newPlayer)               --房间新入玩家

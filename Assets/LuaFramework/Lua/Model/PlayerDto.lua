@@ -7,9 +7,9 @@ function PlayerDto:new(_o)
     return _o
 end
 
-local Id;
-local Name;
-IsReady=false;              --是否准备
+Id="";
+Name="";
+IsReady=false;                --是否准备
 
 
 

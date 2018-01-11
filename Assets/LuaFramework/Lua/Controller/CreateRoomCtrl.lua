@@ -66,7 +66,7 @@ end
 function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
     if CreateRoomPanel.MixedMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建花麻将房间")
-        networkMgr:SendSocketMessage(OpCode.Account,SubCode.CreateRoom_ClientReq,"CreateMixMahjongRoom");
+        networkMgr:SendSocketMessage(OpCode.Room,SubCode.CreateRoom_ClientReq,"CreateMixMahjongRoom");
     else if CreateRoomPanel.HundredMatchMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建百搭麻将房间")
 
@@ -75,8 +75,8 @@ function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
 
 
 
-    this.Hide();
-    GameManager.EnterRoom()          --进入房间
+    --this.Hide();
+    --GameManager.EnterRoom()          --进入房间
 end
 
 

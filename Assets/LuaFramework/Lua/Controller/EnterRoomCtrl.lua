@@ -56,7 +56,7 @@ end
 function EnterRoomCtrl.OnDisable()
     clearNumber()
 end
-function EnterRoomCtrl.Hide()
+function EnterRoomCtrl:Hide()
     if nil~=gameObject then
         panelMgr:SetPanelActive(PanelNames.EnterRoomPanel,false,this.OnDisable)
     end
@@ -97,6 +97,11 @@ end
 
 function EnterRoomCtrl.Enter()                  --进入房间
     print(roomNumber.."todo:进入房间！！！！")
+    local tEnterRoomInfo={
+        RoomNumber=roomNumber,
+        PlayerId=GameModel:GetMyPlayerDto().Id,
+    }
+    networkMgr:SendSocketMessage(OpCode.Room,SubCode.EnterRoom_ClientReq,tEnterRoomInfo)
 end
 function clearNumber()          --清除roomNumber和显示的文本
     if #roomNumber==0 then
@@ -108,6 +113,7 @@ function clearNumber()          --清除roomNumber和显示的文本
         roomNumber=""
     end
 end
+
 
 
 
