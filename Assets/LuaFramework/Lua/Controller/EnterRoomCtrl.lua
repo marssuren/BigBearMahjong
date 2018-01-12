@@ -98,10 +98,12 @@ end
 function EnterRoomCtrl.Enter()                  --进入房间
     print(roomNumber.."todo:进入房间！！！！")
     local tEnterRoomInfo={
-        RoomNumber=roomNumber,
+        RoomId=roomNumber,
         PlayerId=GameModel:GetMyPlayerDto().Id,
     }
-    networkMgr:SendSocketMessage(OpCode.Room,SubCode.EnterRoom_ClientReq,tEnterRoomInfo)
+    local tStr=JsonEncode(tEnterRoomInfo)
+    print(tStr)
+    networkMgr:SendSocketMessage(OpCode.Room,SubCode.EnterRoom_ClientReq,tStr)
 end
 function clearNumber()          --清除roomNumber和显示的文本
     if #roomNumber==0 then

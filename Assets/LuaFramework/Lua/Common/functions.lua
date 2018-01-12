@@ -52,3 +52,8 @@ end
 function getChildsTransforms(_gameObject)
 	return Util.GetChildsTransforms(_gameObject)
 end
+
+function JsonEncode(_table)
+	local cjson=require "cjson"
+	return cjson.encode(_table)
+end

@@ -6,7 +6,7 @@ GameModel={}
 local this=GameModel;        --客户端数据的管理类
 local MyPlayerDto=PlayerDto:new()
 
-local Dialect;              --方言类型
+Dialect=DialectType.SuZhouDialect;              --方言类型
 local MatchRoomDto=MatchRoomDto:new()           --当前匹配进入的房间
 
 

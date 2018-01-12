@@ -1,6 +1,6 @@
 RoomHandler={}
 local this=RoomHandler
-
+require "cjson"
 
 function RoomHandler:Process(_subCode,_value)
     print(_value)
@@ -25,9 +25,11 @@ end
 
 
 function RoomHandler:OnCreateRoomRes(_value)       --处理创建房间的服务器响应
-    local tRoomId=_value
-    networkMgr:SendSocketMessage(OpCode.Room,SubCode.EnterRoom_ClientReq,tRoomId)
-
+    local tEnterRoomInfo={
+        RoomId=_value,
+    }
+    local tStr=JsonEncode(tEnterRoomInfo)
+    networkMgr:SendSocketMessage(OpCode.Room,SubCode.EnterRoom_ClientReq,tStr)
 end
 function RoomHandler:OnEnterRoomSuccessRes(_value)         --处理进入房间成功的服务器响应
     GameModel:GetMatchRoomDto().RoomId=_value

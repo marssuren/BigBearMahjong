@@ -25,4 +25,7 @@ SubCode={
 	EnterRoom_FailServerRes=1206,			--进入房间失败服务器回应
 	ExitRoom_ClientReq=1204,				--退出房间客户端请求
 	ExitRoom_ServerRes=1205,				--退出房间服务器回应
+
+	RequestRoomPlayers_ClientReq=1400,		--获取房间内玩家的信息的请求
+	RequestRoomPlayers_ServerRes=1401,		--获取房间内玩家信息的回应
 }

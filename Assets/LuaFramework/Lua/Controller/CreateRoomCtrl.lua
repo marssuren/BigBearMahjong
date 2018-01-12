@@ -6,7 +6,10 @@ local this=CreateRoomCtrl
 local gameObject
 local transform
 local message
-
+local rule="2m3c"      --规则
+local isFloatFlower=true     --是否飘花
+local roundCount=8      --局数
+local payType="AA"      --支付方式
 
 
 function CreateRoomCtrl.New()
@@ -45,6 +48,15 @@ function CreateRoomCtrl.OnCreate(_gameObject)
     message:AddClick(CreateRoomPanel.CloseBtn,this.OnCloseBtnClick) --绑定关闭按钮点击事件
     message:AddToggleValueListener(CreateRoomPanel.MixedMahjongToggle,this.OnMixedMahjongToggleValueChanged)
     --绑定花麻将Toggle监听事件
+    message:AddToggleValueListener(CreateRoomPanel.MixedMahjongRuleToggle,this.OnMixedMahjongRuleToggleValueChanged)
+    --绑定花麻将规则Toggle监听事件
+    message:AddToggleValueListener(CreateRoomPanel.MixedMahjongFloatFlowerToggle,this
+    .OnMixedMahjongFloatFlowerToggleValueChanged)   --绑定花麻将飘花Toggle监听事件
+    message:AddToggleValueListener(CreateRoomPanel.MixedMahjongRoundCountToggle,this
+    .OnMixedMahjongRoundCountToggleValueChanged)  --绑定花麻将局数Toggle监听事件
+    message:AddToggleValueListener(CreateRoomPanel.MixedMahjongPayTypeToggle,this
+    .OnMixedMahjongPayTypeToggleValueChanged)  --绑定花麻将支付方式Toggle监听事件
+
     --message:AddToggleValueListener(CreateRoomPanel.HundredMatchMahjongToggle,this
     --.OnHundredMatchMahjongToggleValueChanged)
     --绑定百搭麻将Toggle监听事件
@@ -63,10 +75,45 @@ end
 function CreateRoomCtrl.OnHundredMatchMahjongToggleValueChanged(_value) --百搭麻将Toggle值变化事件
         CreateRoomPanel.HundredMatchMahjongArea:SetActive(_value)
 end
+function CreateRoomCtrl.OnMixedMahjongRuleToggleValueChanged(_value)    --"规则"Toggle值变化事件
+    if _value then
+        rule="2m3c"     --2摸3铳
+    else
+        rule="3m4c"     --3摸4铳
+    end
+end
+function CreateRoomCtrl.OnMixedMahjongFloatFlowerToggleValueChanged(_value) --"飘花"Toggle值变化事件
+    isFloatFlower=_value    --是否飘花
+end
+function CreateRoomCtrl.OnMixedMahjongRoundCountToggleValueChanged(_value)      --"局数"Toggle值变化事件
+    if _value then
+        roundCount=8        --8轮
+    else
+        roundCount=16       --16轮
+    end
+end
+function CreateRoomCtrl.OnMixedMahjongPayTypeToggleValueChanged(_value)   --"支付方式"Toggle值变化事件
+    if _value then
+        payType="AA"        --AA
+    else
+        payType="Owner"     --房主支付
+    end
+end
+
+
 function CreateRoomCtrl.OnCreateBtnClick()          --"创建"按钮点击事件
     if CreateRoomPanel.MixedMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建花麻将房间")
-        networkMgr:SendSocketMessage(OpCode.Room,SubCode.CreateRoom_ClientReq,"CreateMixMahjongRoom");
+        local tCreateRoomInfo={
+            RoomType="MixMahjongRoom",
+            Rule=rule,
+            IsFloatFlower=isFloatFlower,
+            RoundCount=roundCount,
+            PayType=payType,
+        }
+        local tStr=JsonEncode(tCreateRoomInfo)      --发送json
+        print(tStr)
+        networkMgr:SendSocketMessage(OpCode.Room,SubCode.CreateRoom_ClientReq,tStr);
     else if CreateRoomPanel.HundredMatchMahjongToggle:GetComponent("UIToggle").value then
         print("todo:创建百搭麻将房间")
 

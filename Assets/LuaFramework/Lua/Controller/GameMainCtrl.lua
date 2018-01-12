@@ -73,7 +73,11 @@ function GameMainCtrl.OnDismissRoomBtnClick( ... )           --"解散房间"按
 end
 function GameMainCtrl.OnExitRoomBtnClick( ... )           --"退出房间"按钮点击事件
     print("todo:ExitRoomBtnClick！")
-    networkMgr:SendSocketMessage(OpCode.Room,SubCode.ExitRoom_ClientReq,GameModel:GetMatchRoomDto().RoomId)
+    local tExitRoomInfo={
+        RoomId=GameModel:GetMatchRoomDto().RoomId,
+    }
+    local tStr=JsonEncode(tExitRoomInfo)
+    networkMgr:SendSocketMessage(OpCode.Room,SubCode.ExitRoom_ClientReq,tStr)
 end
 
 function GameMainCtrl:RefreshUIInfo()                       --刷新UI信息

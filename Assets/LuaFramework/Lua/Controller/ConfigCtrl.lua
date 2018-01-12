@@ -72,7 +72,7 @@ end
 function ConfigCtrl.OnMandarinToggleValueChange(_value)  --"普通话"Toggle值改变触发事件
     if _value==true then
         print("todo:改为普通话")
-        LocalData.Dialect=DialectType.Mandarin
+        GameModel.Dialect=DialectType.Mandarin
         LocalData.SetString("Dialect",DialectType.Mandarin)        
         print(Util.GetString("Dialect","-1"))
     end
