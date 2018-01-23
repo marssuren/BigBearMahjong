@@ -159,9 +159,12 @@ function Network.ProcessSocketMessage(_socketMessage)     --处理Socket信息
     print(_socketMessage.SubCode)
     print(_socketMessage.Value)
     if _socketMessage.OpCode==OpCode.Account then
-        AccountHandler:Process(_socketMessage.SubCode,_socketMessage.Value)
+        AccountHandler:Process(_socketMessage.SubCode,_socketMessage.Value)     --处理账户相关
     end
     if _socketMessage.OpCode==OpCode.Room then
-        RoomHandler:Process(_socketMessage.SubCode,_socketMessage.Value)
+        RoomHandler:Process(_socketMessage.SubCode,_socketMessage.Value)        --处理房间相关
+    end
+    if _socketMessage.OpCode==OpCode.Match then
+        MatchHandler:Process(_socketMessage.SubCode,_socketMessage.Value)       --处理匹配相关
     end
 end

@@ -57,3 +57,7 @@ function JsonEncode(_table)
 	local cjson=require "cjson"
 	return cjson.encode(_table)
 end
+function JsonDecode(_JsonStr)
+	local cjson=require "cjson"
+	return cjson.decode(_JsonStr)
+end

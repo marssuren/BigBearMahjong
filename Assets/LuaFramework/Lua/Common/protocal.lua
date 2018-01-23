@@ -4,6 +4,7 @@ Protocal = {
 	Exception   = '102';	--异常掉线
 	Disconnect  = '103';	--正常断线   
 	Message		= '104';	--接收消息
+
 }
 
 
@@ -11,7 +12,7 @@ OpCode={
 	Account=0,
 	Room=1,				--对房间的操作
 	Battle=2,			--进入房间后的操作
-
+    Match=3,            --开始匹配的操作
 }
 
 SubCode={
@@ -28,4 +29,8 @@ SubCode={
 
 	RequestRoomPlayers_ClientReq=1400,		--获取房间内玩家的信息的请求
 	RequestRoomPlayers_ServerRes=1401,		--获取房间内玩家信息的回应
+
+    EnterMatch_ClientReq=1600,              --开始匹配客户端请求
+    EnterMatch_ServerRes=1601,              --开始匹配服务器回应
+
 }

@@ -25,6 +25,7 @@ function GameModel:CancelReady()                --取消准备
 end
 
 
+
 --function GameModel.GetPlayerDto(_playerId)      --获取房间内某个玩家的信息
 --    return MatchRoomDto.PlayerDic[_playerId]
 --end
