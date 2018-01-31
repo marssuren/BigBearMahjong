@@ -33,4 +33,5 @@ SubCode={
     EnterMatch_ClientReq=1600,              --开始匹配客户端请求
     EnterMatch_ServerRes=1601,              --开始匹配服务器回应
 
+	Chat_ServerRes=1800,					--聊天服务器回应
 }
